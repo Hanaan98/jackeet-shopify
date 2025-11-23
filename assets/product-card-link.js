@@ -24,6 +24,14 @@ class ProductCardLink extends HTMLElement {
     // If the event has been prevented, don't do anything, another component is handling the click
     if (event.defaultPrevented) return;
 
+    // Check if click is on wishlist button - prevent navigation
+    const wishlistButton = event.target.closest('wishlist-button, [data-wishlist-toggle]');
+    if (wishlistButton) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+
     // If the event was on an interactive element, don't do anything, this is not a navigation
     if (event.target instanceof Element) {
       const interactiveElement = event.target.closest('button, input, label, select, [tabindex="1"]');
