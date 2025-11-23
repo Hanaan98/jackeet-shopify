@@ -141,7 +141,7 @@
                   "name": "t:names.menu",
                   "settings": {
                     "menu": "footer-legal",
-                    "heading": "Connect",
+                    "heading": "Legal",
                     "menu_spacing": 12,
                     "show_as_accordion": false,
                     "accordion_icon": "caret",
