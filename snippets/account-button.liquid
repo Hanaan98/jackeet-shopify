@@ -34,9 +34,15 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    padding: 8px 12px;
+    padding: 6px 8px;
     transition: color var(--animation-speed) var(--animation-easing);
     anchor-name: --account-button-trigger;
+  }
+
+  @media screen and (min-width: 990px) {
+    .account-button {
+      padding: 8px 12px;
+    }
   }
 
   .account-button__avatar {

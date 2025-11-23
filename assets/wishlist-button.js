@@ -27,6 +27,7 @@ export class WishlistButton extends Component {
   handleClick = (event) => {
     event.preventDefault();
     event.stopPropagation();
+    event.stopImmediatePropagation();
     
     const productId = parseInt(this.dataset.productId || '0');
     if (!productId) return;
@@ -41,6 +42,8 @@ export class WishlistButton extends Component {
     
     // Update visual state
     this.updateState();
+    
+    return false;
   };
 
   /**

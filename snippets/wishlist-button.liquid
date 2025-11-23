@@ -24,13 +24,17 @@
 </wishlist-button>
 
 {% stylesheet %}
+  product-card {
+    position: relative;
+  }
+
   .wishlist-button {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    z-index: 2;
-    width: 36px;
-    height: 36px;
+    top: 8px;
+    right: 8px;
+    z-index: 10;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,6 +44,18 @@
     transition: transform 0.2s ease, background-color 0.2s ease;
     backdrop-filter: blur(8px);
     border: 1px solid rgba(0, 0, 0, 0.08);
+    pointer-events: auto;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  @media screen and (min-width: 750px) {
+    .wishlist-button {
+      top: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+    }
   }
 
   .wishlist-button:hover {
@@ -48,9 +64,16 @@
   }
 
   .wishlist-button__icon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     color: var(--color-foreground);
+  }
+
+  @media screen and (min-width: 750px) {
+    .wishlist-button__icon {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   .wishlist-button__fill {
