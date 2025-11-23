@@ -43,13 +43,28 @@
     
     // Fetch product data
     try {
-      const productPromises = wishlist.map(async (productId) => {
-        const response = await fetch(`/products/${productId}.js`);
-        if (!response.ok) return null;
+      const productPromises = wishlist.map(async (item) => {
+        // Support both old format (just ID) and new format (object with handle)
+        const handle = typeof item === 'object' ? item.handle : null;
+        const productId = typeof item === 'object' ? item.id : item;
+        
+        if (!handle) {
+          console.warn('[Favourites] No handle for product:', productId);
+          return null;
+        }
+        
+        console.log('[Favourites] Fetching product:', handle);
+        const response = await fetch(`/products/${handle}.js`);
+        if (!response.ok) {
+          console.error('[Favourites] Failed to fetch product:', handle, response.status);
+          return null;
+        }
         return response.json();
       });
       
       const products = (await Promise.all(productPromises)).filter(p => p !== null);
+      
+      console.log('[Favourites] Loaded products:', products.length);
       
       if (products.length === 0) {
         loading.style.display = 'none';

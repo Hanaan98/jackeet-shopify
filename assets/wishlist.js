@@ -41,13 +41,21 @@ function saveWishlist(wishlist) {
 /**
  * Add product to wishlist
  * @param {number} productId - Product ID to add
+ * @param {string} productHandle - Product handle/slug
  * @returns {boolean} Success status
  */
-export function addToWishlist(productId) {
-  console.log('[Wishlist] Adding product to wishlist:', productId);
+export function addToWishlist(productId, productHandle = '') {
+  console.log('[Wishlist] Adding product to wishlist:', productId, productHandle);
   const wishlist = getWishlist();
-  if (!wishlist.includes(productId)) {
-    wishlist.push(productId);
+  
+  // Check if product already exists (by ID)
+  const exists = wishlist.find(item => {
+    // Support both old format (just ID) and new format (object)
+    return typeof item === 'object' ? item.id === productId : item === productId;
+  });
+  
+  if (!exists) {
+    wishlist.push({ id: productId, handle: productHandle });
     saveWishlist(wishlist);
     console.log('[Wishlist] Product added successfully:', productId);
     return true;
@@ -64,7 +72,11 @@ export function addToWishlist(productId) {
 export function removeFromWishlist(productId) {
   console.log('[Wishlist] Removing product from wishlist:', productId);
   const wishlist = getWishlist();
-  const index = wishlist.indexOf(productId);
+  const index = wishlist.findIndex(item => {
+    // Support both old format (just ID) and new format (object)
+    return typeof item === 'object' ? item.id === productId : item === productId;
+  });
+  
   if (index > -1) {
     wishlist.splice(index, 1);
     saveWishlist(wishlist);
@@ -78,18 +90,23 @@ export function removeFromWishlist(productId) {
 /**
  * Toggle product in wishlist
  * @param {number} productId - Product ID to toggle
+ * @param {string} productHandle - Product handle/slug
  * @returns {boolean} True if added, false if removed
  */
-export function toggleWishlist(productId) {
-  console.log('[Wishlist] Toggling wishlist for product:', productId);
+export function toggleWishlist(productId, productHandle = '') {
+  console.log('[Wishlist] Toggling wishlist for product:', productId, productHandle);
   const wishlist = getWishlist();
-  if (wishlist.includes(productId)) {
+  const exists = wishlist.find(item => {
+    return typeof item === 'object' ? item.id === productId : item === productId;
+  });
+  
+  if (exists) {
     console.log('[Wishlist] Product is in wishlist, removing...');
     removeFromWishlist(productId);
     return false;
   } else {
     console.log('[Wishlist] Product not in wishlist, adding...');
-    addToWishlist(productId);
+    addToWishlist(productId, productHandle);
     return true;
   }
 }
@@ -100,7 +117,11 @@ export function toggleWishlist(productId) {
  * @returns {boolean} True if in wishlist
  */
 export function isInWishlist(productId) {
-  return getWishlist().includes(productId);
+  const wishlist = getWishlist();
+  return wishlist.some(item => {
+    // Support both old format (just ID) and new format (object)
+    return typeof item === 'object' ? item.id === productId : item === productId;
+  });
 }
 
 /**

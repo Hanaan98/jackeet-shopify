@@ -67,13 +67,15 @@ export class WishlistButton extends Component {
     event.stopImmediatePropagation();
     
     const productId = parseInt(this.dataset.productId || '0');
+    const productHandle = this.dataset.productHandle || '';
+    
     if (!productId) {
       console.warn('[WishlistButton] No product ID found!');
       return;
     }
     
-    console.log('[WishlistButton] Toggling wishlist for product:', productId);
-    const isAdded = toggleWishlist(productId);
+    console.log('[WishlistButton] Toggling wishlist for product:', productId, productHandle);
+    const isAdded = toggleWishlist(productId, productHandle);
     console.log('[WishlistButton] Toggle result:', isAdded ? 'Added' : 'Removed');
     
     // Add animation class
