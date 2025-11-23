@@ -1,7 +1,12 @@
 <script type="module" src="{{ 'wishlist.js' | asset_url }}"></script>
 
 <div class="favourites-page section section--full-width-margin color-{{ section.settings.color_scheme }}">
-  <div class="favourites-container spacing-style">
+  <div class="favourites-container page-width">
+    <div class="favourites-header">
+      <h1 class="favourites-title h2">MY WISHLIST</h1>
+      <p class="favourites-subtitle">These are the items you liked the most</p>
+    </div>
+
     <div id="favourites-empty-state" class="favourites-empty" style="display: none;">
       <div class="favourites-empty__content">
         <svg class="favourites-empty__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
@@ -19,9 +24,9 @@
       <div class="favourites-loading__spinner"></div>
     </div>
 
-    <div id="favourites-grid" class="favourites-grid" style="display: none;">
+    <ul id="favourites-grid" class="product-grid" style="display: none;">
       <!-- Products will be loaded here via JavaScript -->
-    </div>
+    </ul>
   </div>
 </div>
 
@@ -104,13 +109,46 @@
         return;
       }
       
-      // Render products
+      // Render products using the same product card as collections
       loading.style.display = 'none';
       grid.style.display = 'grid';
       
       products.forEach((product) => {
-        const card = createProductCard(product);
-        grid.appendChild(card);
+        const li = document.createElement('li');
+        li.className = 'product-grid__item';
+        
+        // Use Shopify's product card HTML structure
+        li.innerHTML = `
+          <product-card class="product-card" data-product-id="${product.id}">
+            <a href="/products/${product.handle}" class="product-card__link">
+              <span class="visually-hidden">${product.title}</span>
+            </a>
+            <div class="product-card__content layout-panel-flex layout-panel-flex--column product-grid__card">
+              <div class="card-gallery">
+                <div class="card-gallery__image-wrapper">
+                  <img 
+                    src="${product.featured_image || product.images[0]}" 
+                    alt="${product.title}"
+                    class="card-gallery__image"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="product-card__info" style="padding: 12px 0; display: flex; flex-direction: column; gap: 4px;">
+                <h3 class="product-card__title" style="font-size: 14px; font-weight: 400; margin: 0;">
+                  ${product.title}
+                </h3>
+                <div class="product-card__price" style="font-size: 14px;">
+                  ${product.variants[0].compare_at_price ? 
+                    `<span style="text-decoration: line-through; opacity: 0.6; margin-right: 8px;">${formatMoney(product.variants[0].compare_at_price)}</span>` : ''}
+                  <span>${formatMoney(product.variants[0].price)}</span>
+                </div>
+              </div>
+            </div>
+          </product-card>
+        `;
+        
+        grid.appendChild(li);
       });
       
     } catch (error) {
@@ -210,6 +248,81 @@
 
   @media screen and (min-width: 750px) {
     .favourites-container {
+      padding-inline: var(--padding-xl);
+    }
+  }
+
+  .favourites-header {
+    margin-bottom: var(--margin-2xl);
+  }
+
+  .favourites-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin: 0 0 var(--margin-xs);
+  }
+
+  .favourites-subtitle {
+    font-size: var(--font-size--sm);
+    color: rgb(var(--color-foreground-rgb) / 0.7);
+    margin: 0;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap-md);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .product-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap-lg);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .product-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .product-card {
+    position: relative;
+  }
+
+  .product-card__link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .product-card__content {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .card-gallery__image-wrapper {
+    position: relative;
+    padding-bottom: 125%;
+    background: rgb(var(--color-foreground-rgb) / 0.05);
+    overflow: hidden;
+  }
+
+  .card-gallery__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
       padding-inline: var(--padding-lg);
     }
   }
