@@ -1,0 +1,183 @@
+<div class="about-story section section--full-width-margin color-{{ section.settings.color_scheme }}">
+  <div class="about-story__container spacing-style">
+    <div class="about-story__grid">
+      <div class="about-story__content">
+        <h2 class="about-story__heading">{{ section.settings.heading }}</h2>
+        <div class="about-story__text rte">
+          {{ section.settings.text }}
+        </div>
+      </div>
+      {% if section.settings.image != blank %}
+        <div class="about-story__image-wrapper">
+          <img
+            src="{{ section.settings.image | image_url: width: 1200 }}"
+            srcset="{{ section.settings.image | image_url: width: 400 }} 400w,
+                    {{ section.settings.image | image_url: width: 800 }} 800w,
+                    {{ section.settings.image | image_url: width: 1200 }} 1200w"
+            sizes="(max-width: 749px) 100vw, 50vw"
+            alt="{{ section.settings.image.alt | escape }}"
+            class="about-story__image"
+            loading="lazy"
+          />
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .about-story {
+    padding-block: var(--padding-3xl);
+  }
+
+  @media screen and (min-width: 750px) {
+    .about-story {
+      padding-block: var(--padding-5xl);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .about-story {
+      padding-block: 100px;
+    }
+  }
+
+  .about-story__container {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding-inline: var(--padding-lg);
+  }
+
+  @media screen and (min-width: 750px) {
+    .about-story__container {
+      padding-inline: var(--padding-xl);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .about-story__container {
+      padding-inline: var(--padding-2xl);
+    }
+  }
+
+  .about-story__grid {
+    display: grid;
+    gap: var(--gap-2xl);
+    align-items: center;
+  }
+
+  @media screen and (min-width: 990px) {
+    .about-story__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gap-4xl);
+    }
+  }
+
+  .about-story__heading {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    margin-bottom: var(--margin-lg);
+    text-transform: uppercase;
+  }
+
+  @media screen and (min-width: 750px) {
+    .about-story__heading {
+      margin-bottom: var(--margin-xl);
+    }
+  }
+
+  .about-story__text {
+    font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+    line-height: 1.8;
+    letter-spacing: 0.01em;
+    color: rgb(var(--color-foreground-rgb) / 0.85);
+  }
+
+  .about-story__text p {
+    margin-bottom: var(--margin-md);
+  }
+
+  @media screen and (min-width: 750px) {
+    .about-story__text p {
+      margin-bottom: var(--margin-lg);
+    }
+  }
+
+  .about-story__text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-story__image-wrapper {
+    position: relative;
+    padding-bottom: 125%;
+    overflow: hidden;
+    background: rgb(var(--color-foreground-rgb) / 0.05);
+  }
+
+  @media screen and (min-width: 990px) {
+    .about-story__image-wrapper {
+      padding-bottom: 140%;
+    }
+  }
+
+  .about-story__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "About Story",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "scheme-1",
+          "label": "Scheme 1"
+        },
+        {
+          "value": "scheme-2",
+          "label": "Scheme 2"
+        },
+        {
+          "value": "scheme-3",
+          "label": "Scheme 3"
+        }
+      ],
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "OUR STORY"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Founded on the principles of timeless design and exceptional quality, JACKEETA represents a modern approach to luxury fashion. Each piece in our collection is thoughtfully crafted to embody sophistication and contemporary elegance.</p><p>Our commitment extends beyond creating beautiful garments. We believe in sustainable practices, ethical manufacturing, and designs that transcend seasonal trends. Every stitch, every fabric choice, and every silhouette reflects our dedication to excellence.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Story"
+    }
+  ]
+}
+{% endschema %}

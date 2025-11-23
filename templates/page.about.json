@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "about-hero": {
+      "type": "about-hero"
+    },
+    "about-story": {
+      "type": "about-story"
+    },
+    "about-values": {
+      "type": "about-values"
+    },
+    "about-craftsmanship": {
+      "type": "about-craftsmanship"
+    }
+  },
+  "order": [
+    "about-hero",
+    "about-story",
+    "about-values",
+    "about-craftsmanship"
+  ]
+}
