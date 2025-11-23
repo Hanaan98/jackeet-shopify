@@ -1,0 +1,270 @@
+{% liquid
+  assign heading = section.settings.heading
+%}
+
+<div class="section spacing-style color-{{ section.settings.color_scheme }}">
+  <div class="section-inner page-width">
+    <div class="press-content">
+      {% if heading != blank %}
+        <h1 class="heading-1">{{ heading }}</h1>
+      {% endif %}
+
+      <p class="press-intro">For press inquiries, interview requests, or high-resolution images, please contact our press team.</p>
+
+      <div class="press-sections">
+        <div class="press-section">
+          <h2>PRESS CONTACT</h2>
+          <p><strong>Email:</strong> <a href="mailto:press@jackeeta.com">press@jackeeta.com</a></p>
+          <p><strong>Response Time:</strong> Within 48 hours</p>
+        </div>
+
+        <div class="press-section">
+          <h2>PRESS KIT</h2>
+          <p>Download our comprehensive press kit including:</p>
+          <ul>
+            <li>High-resolution logo files (PNG, SVG, EPS)</li>
+            <li>Brand guidelines and color palette</li>
+            <li>Product photography</li>
+            <li>Company fact sheet</li>
+            <li>Founder biography</li>
+          </ul>
+          <a href="#" class="button button--secondary">DOWNLOAD PRESS KIT</a>
+        </div>
+
+        <div class="press-section">
+          <h2>ABOUT JACKEETA</h2>
+          <p>Founded in 1987, JACKEETA is a premium fashion brand committed to timeless design, exceptional craftsmanship, and sustainable practices. We create versatile, high-quality garments designed to become wardrobe staples.</p>
+          <p>Our collections blend traditional tailoring techniques with contemporary aesthetics, offering refined pieces for those who value quality over quantity.</p>
+        </div>
+
+        <div class="press-section">
+          <h2>BRAND FAST FACTS</h2>
+          <ul>
+            <li><strong>Founded:</strong> 1987</li>
+            <li><strong>Headquarters:</strong> [Location]</li>
+            <li><strong>Category:</strong> Premium Contemporary Fashion</li>
+            <li><strong>Values:</strong> Quality, Sustainability, Timelessness</li>
+            <li><strong>Materials:</strong> Natural fibers from certified suppliers</li>
+            <li><strong>Production:</strong> Ethical manufacturing with fair labor practices</li>
+          </ul>
+        </div>
+
+        <div class="press-section">
+          <h2>RECENT COVERAGE</h2>
+          <div class="press-mentions">
+            <div class="mention-item">
+              <p class="mention-publication">Fashion Magazine</p>
+              <p class="mention-title">"The New Wave of Sustainable Luxury"</p>
+              <p class="mention-date">October 2025</p>
+            </div>
+            <div class="mention-item">
+              <p class="mention-publication">Style Journal</p>
+              <p class="mention-title">"Brands Redefining Modern Elegance"</p>
+              <p class="mention-date">September 2025</p>
+            </div>
+            <div class="mention-item">
+              <p class="mention-publication">Design Weekly</p>
+              <p class="mention-title">"Craftsmanship That Stands the Test of Time"</p>
+              <p class="mention-date">August 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="press-section">
+          <h2>SAMPLE REQUESTS</h2>
+          <p>We accommodate sample requests for editorial features and reviews. Please include:</p>
+          <ul>
+            <li>Publication name and circulation/traffic</li>
+            <li>Article concept and deadline</li>
+            <li>Specific products needed</li>
+            <li>Return shipping address</li>
+          </ul>
+          <p>All samples must be returned within 30 days in original condition.</p>
+        </div>
+      </div>
+
+      <div class="press-cta">
+        <h3>LET'S COLLABORATE</h3>
+        <p>We're always interested in meaningful partnerships and editorial opportunities.</p>
+        <a href="mailto:press@jackeeta.com" class="button button--primary">GET IN TOUCH</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .press-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .heading-1 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .press-intro {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 64px;
+  }
+
+  .press-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-bottom: 64px;
+  }
+
+  .press-section {
+    padding-bottom: 48px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .press-section:last-child {
+    border-bottom: none;
+  }
+
+  .press-section h2 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .press-section p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 16px;
+  }
+
+  .press-section ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 24px;
+  }
+
+  .press-section li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.8);
+    padding-left: 24px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  .press-section li::before {
+    content: '•';
+    position: absolute;
+    left: 8px;
+  }
+
+  .press-section a:not(.button) {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    transition: opacity 0.2s ease;
+  }
+
+  .press-section a:not(.button):hover {
+    opacity: 0.6;
+  }
+
+  .press-mentions {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .mention-item {
+    padding: 20px;
+    background: #f8f8f8;
+  }
+
+  .mention-publication {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .mention-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .mention-date {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .press-cta {
+    text-align: center;
+    padding: 64px 32px;
+    background: #f8f8f8;
+  }
+
+  .press-cta h3 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .press-cta p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 24px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .press-sections {
+      gap: 32px;
+    }
+
+    .press-section {
+      padding-bottom: 32px;
+    }
+
+    .press-cta {
+      padding: 48px 24px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Press",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Press & Media"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Press"
+    }
+  ]
+}
+{% endschema %}

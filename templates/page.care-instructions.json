@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "care_instructions": {
+      "type": "care-instructions",
+      "settings": {
+        "heading": "Care Instructions"
+      }
+    }
+  },
+  "order": ["care_instructions"]
+}

@@ -1,0 +1,273 @@
+{% liquid
+  assign heading = section.settings.heading
+%}
+
+<div class="section spacing-style color-{{ section.settings.color_scheme }}">
+  <div class="section-inner page-width">
+    <div class="care-content">
+      {% if heading != blank %}
+        <h1 class="heading-1">{{ heading }}</h1>
+      {% endif %}
+
+      <p class="care-intro">Proper care ensures your JACKEETA pieces remain beautiful for years to come. Follow these guidelines to maintain the quality and longevity of your garments.</p>
+
+      <div class="care-sections">
+        <div class="care-category">
+          <h2>GENERAL CARE</h2>
+          <ul>
+            <li>Always check the care label inside your garment before washing</li>
+            <li>Separate light and dark colors</li>
+            <li>Turn garments inside out before washing to preserve color and texture</li>
+            <li>Use cold water when possible to prevent shrinkage and color fading</li>
+            <li>Avoid overloading the washing machine</li>
+            <li>Remove items from the washer promptly to prevent wrinkles</li>
+          </ul>
+        </div>
+
+        <div class="care-by-fabric">
+          <h2>CARE BY FABRIC</h2>
+          
+          <div class="fabric-item">
+            <h3>COTTON</h3>
+            <p>Machine wash cold with like colors. Tumble dry low or hang to dry. Iron on medium heat if needed. Cotton may shrink slightly after the first wash.</p>
+          </div>
+
+          <div class="fabric-item">
+            <h3>WOOL</h3>
+            <p>Hand wash in cold water with wool-specific detergent or dry clean. Lay flat to dry away from direct heat. Never wring or twist. Store folded, not hung, to maintain shape.</p>
+          </div>
+
+          <div class="fabric-item">
+            <h3>SILK</h3>
+            <p>Dry clean recommended. If hand washing, use cold water and silk detergent. Never twist or wring. Roll in a towel to remove excess water, then lay flat to dry. Iron on low heat while slightly damp.</p>
+          </div>
+
+          <div class="fabric-item">
+            <h3>LINEN</h3>
+            <p>Machine wash cold on gentle cycle. Tumble dry low or hang to dry. Iron while slightly damp on high heat. Linen naturally wrinkles – this is part of its charm.</p>
+          </div>
+
+          <div class="fabric-item">
+            <h3>DENIM</h3>
+            <p>Wash inside out in cold water. Hang to dry to prevent shrinkage and preserve color. Iron on high heat if needed. Limit washing to every 5-6 wears to extend life.</p>
+          </div>
+
+          <div class="fabric-item">
+            <h3>CASHMERE</h3>
+            <p>Hand wash in cool water with cashmere shampoo. Gently squeeze – never wring. Roll in towel to remove moisture, then lay flat to dry. Store folded with cedar or lavender sachets.</p>
+          </div>
+
+          <div class="fabric-item">
+            <h3>LEATHER</h3>
+            <p>Professional leather cleaning only. Spot clean with a damp cloth. Store in breathable garment bag. Apply leather conditioner twice a year. Keep away from direct heat and sunlight.</p>
+          </div>
+        </div>
+
+        <div class="care-category">
+          <h2>STAIN REMOVAL</h2>
+          <ul>
+            <li><strong>Oil-based stains:</strong> Apply dish soap before washing</li>
+            <li><strong>Wine/Coffee:</strong> Blot immediately with cold water, then wash</li>
+            <li><strong>Ink:</strong> Dab with rubbing alcohol using a cotton ball</li>
+            <li><strong>Makeup:</strong> Pre-treat with liquid laundry detergent</li>
+            <li>Always test stain removers on an inconspicuous area first</li>
+            <li>Never put stained items in the dryer – heat sets stains</li>
+          </ul>
+        </div>
+
+        <div class="care-category">
+          <h2>STORAGE TIPS</h2>
+          <ul>
+            <li>Store in a cool, dry place away from direct sunlight</li>
+            <li>Use padded hangers for structured pieces like blazers and coats</li>
+            <li>Fold heavy knits to prevent stretching</li>
+            <li>Use garment bags for special occasion pieces</li>
+            <li>Allow pieces to air out before storing</li>
+            <li>Use cedar blocks or lavender sachets to deter moths</li>
+          </ul>
+        </div>
+
+        <div class="care-symbols">
+          <h2>CARE SYMBOLS GUIDE</h2>
+          <div class="symbols-grid">
+            <div class="symbol-item">
+              <div class="symbol-icon">△</div>
+              <p>Do Not Bleach</p>
+            </div>
+            <div class="symbol-item">
+              <div class="symbol-icon">○</div>
+              <p>Dry Clean Only</p>
+            </div>
+            <div class="symbol-item">
+              <div class="symbol-icon">□</div>
+              <p>Tumble Dry Low</p>
+            </div>
+            <div class="symbol-item">
+              <div class="symbol-icon">⊓</div>
+              <p>Iron Low Heat</p>
+            </div>
+            <div class="symbol-item">
+              <div class="symbol-icon">◡</div>
+              <p>Hand Wash Only</p>
+            </div>
+            <div class="symbol-item">
+              <div class="symbol-icon">⌒</div>
+              <p>Do Not Wring</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .care-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .heading-1 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .care-intro {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 64px;
+  }
+
+  .care-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .care-category h2,
+  .care-by-fabric h2 {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .care-category ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .care-category li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.8);
+    padding-left: 24px;
+    position: relative;
+    margin-bottom: 12px;
+  }
+
+  .care-category li::before {
+    content: '•';
+    position: absolute;
+    left: 8px;
+  }
+
+  .care-by-fabric {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .fabric-item {
+    padding: 24px;
+    background: #f8f8f8;
+    border-left: 3px solid #000;
+  }
+
+  .fabric-item h3 {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .fabric-item p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .care-symbols {
+    padding: 48px;
+    background: #f8f8f8;
+  }
+
+  .symbols-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 32px;
+  }
+
+  .symbol-item {
+    text-align: center;
+  }
+
+  .symbol-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    font-weight: 300;
+  }
+
+  .symbol-item p {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  @media screen and (max-width: 749px) {
+    .care-sections {
+      gap: 48px;
+    }
+
+    .symbols-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .care-symbols {
+      padding: 32px 24px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Care Instructions",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Care Instructions"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Care Instructions"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "stockists": {
+      "type": "stockists",
+      "settings": {
+        "heading": "Where To Buy"
+      }
+    }
+  },
+  "order": ["stockists"]
+}

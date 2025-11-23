@@ -1,0 +1,168 @@
+{% liquid
+  assign heading = section.settings.heading
+%}
+
+<div class="section spacing-style color-{{ section.settings.color_scheme }}">
+  <div class="section-inner page-width">
+    <div class="story-content">
+      {% if heading != blank %}
+        <h1 class="heading-1">{{ heading }}</h1>
+      {% endif %}
+
+      <div class="story-sections">
+        <div class="story-section">
+          <div class="story-year">SINCE 1987</div>
+          <h2>THE BEGINNING</h2>
+          <p>JACKEETA was born from a simple belief: that exceptional clothing should be both timeless and accessible. Founded in 1987, our journey began with a single workshop and a commitment to craftsmanship that would define decades to come.</p>
+          <p>What started as a small atelier has grown into a respected name in premium fashion, but our core values remain unchanged – quality, integrity, and an unwavering dedication to the art of garment making.</p>
+        </div>
+
+        <div class="story-section">
+          <h2>OUR PHILOSOPHY</h2>
+          <p>We believe in creating pieces that transcend seasons and trends. Each JACKEETA garment is designed to become a cornerstone of your wardrobe – versatile, enduring, and effortlessly refined.</p>
+          <p>Our approach combines traditional tailoring techniques with contemporary design sensibilities. We don't chase fleeting trends; instead, we focus on perfecting the fundamentals: impeccable fit, superior materials, and meticulous attention to detail.</p>
+        </div>
+
+        <div class="story-section">
+          <h2>CRAFTSMANSHIP</h2>
+          <p>Every JACKEETA piece tells a story of skilled hands and careful consideration. Our garments are crafted by experienced artisans who understand that true luxury lies in the details others overlook.</p>
+          <p>From pattern making to final stitching, we maintain rigorous standards at every stage. We work with select mills and suppliers who share our commitment to quality, ensuring that every fabric, button, and thread meets our exacting specifications.</p>
+        </div>
+
+        <div class="story-section">
+          <h2>SOURCING & MATERIALS</h2>
+          <p>We source premium materials from renowned mills across Europe and Japan. Our fabrics are chosen for their quality, durability, and sustainability. We prioritize natural fibers – cotton, wool, linen, silk – that improve with age and can be worn for years.</p>
+          <p>We believe in transparency. When you choose JACKEETA, you're investing in garments made with respect for both craft and environment.</p>
+        </div>
+
+        <div class="story-section">
+          <h2>TIMELESS DESIGN</h2>
+          <p>JACKEETA designs are characterized by clean lines, refined silhouettes, and understated elegance. We create clothing for individuals who appreciate quality over quantity, substance over spectacle.</p>
+          <p>Our collections are thoughtfully curated – each piece designed to work seamlessly with others, building a cohesive wardrobe that serves you season after season.</p>
+        </div>
+
+        <div class="story-section">
+          <h2>LOOKING FORWARD</h2>
+          <p>As we continue to grow, our commitment remains steadfast: to create exceptional clothing that respects tradition while embracing innovation. We're constantly exploring new techniques, sustainable practices, and ways to serve our community better.</p>
+          <p>Thank you for being part of our story. Every garment we create is made with you in mind – designed to accompany you through life's moments, both ordinary and extraordinary.</p>
+        </div>
+
+        <div class="story-cta">
+          <h3>DISCOVER OUR CRAFT</h3>
+          <p>Explore the attention to detail that goes into every JACKEETA piece.</p>
+          <a href="/collections/all" class="button button--primary">SHOP COLLECTION</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .story-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .heading-1 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 64px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .story-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .story-section {
+    position: relative;
+  }
+
+  .story-year {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 8px;
+  }
+
+  .story-section h2 {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .story-section p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+  }
+
+  .story-section p:last-child {
+    margin-bottom: 0;
+  }
+
+  .story-cta {
+    text-align: center;
+    padding: 64px 32px;
+    background: #f8f8f8;
+    margin-top: 32px;
+  }
+
+  .story-cta h3 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .story-cta p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 32px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .story-sections {
+      gap: 48px;
+    }
+
+    .story-cta {
+      padding: 48px 24px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Our Story",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Story"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our Story"
+    }
+  ]
+}
+{% endschema %}

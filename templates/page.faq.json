@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Frequently Asked Questions"
+      }
+    }
+  },
+  "order": ["faq"]
+}

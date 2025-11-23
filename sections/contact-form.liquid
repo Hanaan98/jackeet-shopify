@@ -1,0 +1,289 @@
+{% liquid
+  assign heading = section.settings.heading
+  assign subheading = section.settings.subheading
+  assign show_contact_info = section.settings.show_contact_info
+%}
+
+<div class="section spacing-style color-{{ section.settings.color_scheme }}">
+  <div class="section-inner page-width">
+    <div class="contact-wrapper">
+      <div class="contact-content">
+        {% if heading != blank %}
+          <h1 class="heading-1">{{ heading }}</h1>
+        {% endif %}
+        
+        {% if subheading != blank %}
+          <p class="contact-subheading">{{ subheading }}</p>
+        {% endif %}
+
+        {% form 'contact', class: 'contact-form' %}
+          {% if form.posted_successfully? %}
+            <div class="form-success">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-2 15l-5-5 1.41-1.41L8 12.17l7.59-7.59L17 6l-9 9z" fill="currentColor"/>
+              </svg>
+              <p>{{ 'contact.form.post_success' | t }}</p>
+            </div>
+          {% endif %}
+
+          {% if form.errors %}
+            <div class="form-errors">
+              <p>{{ form.errors | default_errors }}</p>
+            </div>
+          {% endif %}
+
+          <div class="form-group">
+            <label for="ContactForm-name">NAME *</label>
+            <input
+              type="text"
+              id="ContactForm-name"
+              name="contact[name]"
+              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="ContactForm-email">EMAIL *</label>
+            <input
+              type="email"
+              id="ContactForm-email"
+              name="contact[email]"
+              value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="ContactForm-phone">PHONE</label>
+            <input
+              type="tel"
+              id="ContactForm-phone"
+              name="contact[phone]"
+              value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="ContactForm-message">MESSAGE *</label>
+            <textarea
+              id="ContactForm-message"
+              name="contact[body]"
+              rows="6"
+              required
+            >{% if form.body %}{{ form.body }}{% endif %}</textarea>
+          </div>
+
+          <button type="submit" class="button button--primary button--full-width">
+            SEND MESSAGE
+          </button>
+        {% endform %}
+      </div>
+
+      {% if show_contact_info %}
+        <div class="contact-info">
+          <div class="contact-info-block">
+            <h3>CUSTOMER SERVICE</h3>
+            <p>Available Monday to Friday<br>9:00 AM - 6:00 PM</p>
+            <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a>
+          </div>
+
+          {% if section.settings.phone != blank %}
+            <div class="contact-info-block">
+              <h3>PHONE</h3>
+              <a href="tel:{{ section.settings.phone }}">{{ section.settings.phone }}</a>
+            </div>
+          {% endif %}
+
+          {% if section.settings.address != blank %}
+            <div class="contact-info-block">
+              <h3>ADDRESS</h3>
+              <p>{{ section.settings.address }}</p>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 990px) {
+    .contact-wrapper {
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+  }
+
+  .contact-content {
+    max-width: 600px;
+  }
+
+  .heading-1 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .contact-subheading {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 40px;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    background: white;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #000;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .form-success {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f0f9f0;
+    border: 1px solid #4caf50;
+    color: #2e7d32;
+    border-radius: 4px;
+  }
+
+  .form-errors {
+    padding: 16px;
+    background: #fff3f3;
+    border: 1px solid #f44336;
+    color: #c62828;
+    border-radius: 4px;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .contact-info-block h3 {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .contact-info-block p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 8px;
+  }
+
+  .contact-info-block a {
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    transition: opacity 0.2s ease;
+  }
+
+  .contact-info-block a:hover {
+    opacity: 0.6;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Contact Form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Get In Touch"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Have a question? We're here to help. Fill out the form below and we'll get back to you within 24 hours."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_contact_info",
+      "label": "Show contact information",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "default": "hello@jackeeta.com"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone"
+    },
+    {
+      "type": "textarea",
+      "id": "address",
+      "label": "Address"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Form"
+    }
+  ]
+}
+{% endschema %}

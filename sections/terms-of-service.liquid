@@ -1,0 +1,183 @@
+{% liquid
+  assign heading = section.settings.heading
+%}
+
+<div class="section spacing-style color-{{ section.settings.color_scheme }}">
+  <div class="section-inner page-width">
+    <div class="terms-content">
+      {% if heading != blank %}
+        <h1 class="heading-1">{{ heading }}</h1>
+      {% endif %}
+
+      <p class="terms-updated">Last Updated: November 23, 2025</p>
+
+      <div class="terms-text">
+        <p>Welcome to JACKEETA. By accessing or using our website, you agree to be bound by these Terms of Service. Please read them carefully.</p>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By using this website, you confirm that you are at least 18 years old or have the consent of a parent or guardian. If you do not agree to these terms, please do not use our website.</p>
+
+        <h2>2. Use of Website</h2>
+        <p>You agree to use our website only for lawful purposes and in accordance with these Terms. You agree not to:</p>
+        <ul>
+          <li>Use the website in any way that violates applicable laws or regulations</li>
+          <li>Attempt to gain unauthorized access to any part of the website</li>
+          <li>Interfere with or disrupt the website or servers</li>
+          <li>Use automated systems to access the website without permission</li>
+          <li>Reproduce, duplicate, or exploit any part of the website without consent</li>
+        </ul>
+
+        <h2>3. Product Information</h2>
+        <p>We strive to display product colors, images, and descriptions as accurately as possible. However, we cannot guarantee that your device's display will accurately reflect actual colors. We reserve the right to limit quantities and discontinue products at any time.</p>
+
+        <h2>4. Pricing</h2>
+        <p>All prices are displayed in USD (or your local currency) and are subject to change without notice. We reserve the right to correct pricing errors. If a product is listed at an incorrect price, we may cancel or refuse orders placed for that product.</p>
+
+        <h2>5. Orders and Payment</h2>
+        <p>By placing an order, you are making an offer to purchase products. We reserve the right to accept or decline any order. Payment must be received in full before orders are processed. We accept major credit cards, PayPal, and other payment methods as displayed at checkout.</p>
+
+        <h2>6. Shipping and Delivery</h2>
+        <p>Shipping times are estimates and not guarantees. We are not responsible for delays caused by shipping carriers, customs, or circumstances beyond our control. Risk of loss passes to you upon delivery to the carrier.</p>
+
+        <h2>7. Returns and Refunds</h2>
+        <p>Our return policy is outlined on our <a href="/pages/shipping-returns">Shipping & Returns</a> page. Returns must comply with our policy to be eligible for refunds. We reserve the right to refuse returns that do not meet our requirements.</p>
+
+        <h2>8. Intellectual Property</h2>
+        <p>All content on this website, including text, images, logos, and designs, is the property of JACKEETA or its licensors and is protected by copyright and trademark laws. You may not use, reproduce, or distribute any content without our written permission.</p>
+
+        <h2>9. User Accounts</h2>
+        <p>If you create an account, you are responsible for maintaining its confidentiality and security. You agree to provide accurate information and update it as needed. You are responsible for all activities under your account.</p>
+
+        <h2>10. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by law, JACKEETA shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the website or products purchased. Our total liability shall not exceed the amount you paid for the product(s) in question.</p>
+
+        <h2>11. Indemnification</h2>
+        <p>You agree to indemnify and hold JACKEETA harmless from any claims, damages, or expenses arising from your use of the website or violation of these Terms.</p>
+
+        <h2>12. Third-Party Links</h2>
+        <p>Our website may contain links to third-party websites. We are not responsible for the content or practices of these sites. Your use of third-party websites is at your own risk.</p>
+
+        <h2>13. Privacy</h2>
+        <p>Your use of our website is also governed by our <a href="/pages/privacy-policy">Privacy Policy</a>. Please review it to understand how we collect and use your information.</p>
+
+        <h2>14. Modifications to Terms</h2>
+        <p>We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting. Your continued use of the website constitutes acceptance of the modified Terms.</p>
+
+        <h2>15. Governing Law</h2>
+        <p>These Terms are governed by and construed in accordance with applicable laws. Any disputes shall be resolved in the appropriate courts.</p>
+
+        <h2>16. Severability</h2>
+        <p>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.</p>
+
+        <h2>17. Contact Information</h2>
+        <p>For questions about these Terms of Service, please contact us:</p>
+        <p>
+          <strong>Email:</strong> legal@jackeeta.com<br>
+          <strong>Customer Service:</strong> hello@jackeeta.com
+        </p>
+
+        <p class="terms-acknowledgment">By using this website, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .terms-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .heading-1 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .terms-updated {
+    text-align: center;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 48px;
+  }
+
+  .terms-text h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 48px;
+    margin-bottom: 16px;
+  }
+
+  .terms-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 16px;
+  }
+
+  .terms-text ul {
+    margin-left: 24px;
+    margin-bottom: 20px;
+  }
+
+  .terms-text li {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 8px;
+  }
+
+  .terms-text a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    transition: opacity 0.2s ease;
+  }
+
+  .terms-text a:hover {
+    opacity: 0.6;
+  }
+
+  .terms-acknowledgment {
+    margin-top: 48px;
+    padding: 24px;
+    background: #f8f8f8;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 749px) {
+    .terms-text h2 {
+      margin-top: 32px;
+      font-size: 18px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Terms of Service",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Terms of Service"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Terms of Service"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "our_story": {
+      "type": "our-story",
+      "settings": {
+        "heading": "Our Story"
+      }
+    }
+  },
+  "order": ["our_story"]
+}

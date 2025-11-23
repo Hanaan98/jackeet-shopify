@@ -1,0 +1,359 @@
+{% liquid
+  assign heading = section.settings.heading
+%}
+
+<div class="section spacing-style color-{{ section.settings.color_scheme }}">
+  <div class="section-inner page-width">
+    <div class="size-guide-content">
+      {% if heading != blank %}
+        <h1 class="heading-1">{{ heading }}</h1>
+      {% endif %}
+
+      <p class="size-guide-intro">Find your perfect fit with our comprehensive sizing guide. All measurements are in inches.</p>
+
+      <div class="size-tables">
+        <div class="size-table-wrapper">
+          <h2>WOMEN'S CLOTHING</h2>
+          <div class="table-scroll">
+            <table class="size-table">
+              <thead>
+                <tr>
+                  <th>SIZE</th>
+                  <th>BUST</th>
+                  <th>WAIST</th>
+                  <th>HIPS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>XS</td>
+                  <td>31-32"</td>
+                  <td>24-25"</td>
+                  <td>34-35"</td>
+                </tr>
+                <tr>
+                  <td>S</td>
+                  <td>33-34"</td>
+                  <td>26-27"</td>
+                  <td>36-37"</td>
+                </tr>
+                <tr>
+                  <td>M</td>
+                  <td>35-36"</td>
+                  <td>28-29"</td>
+                  <td>38-39"</td>
+                </tr>
+                <tr>
+                  <td>L</td>
+                  <td>37-39"</td>
+                  <td>30-32"</td>
+                  <td>40-42"</td>
+                </tr>
+                <tr>
+                  <td>XL</td>
+                  <td>40-42"</td>
+                  <td>33-35"</td>
+                  <td>43-45"</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="size-table-wrapper">
+          <h2>MEN'S CLOTHING</h2>
+          <div class="table-scroll">
+            <table class="size-table">
+              <thead>
+                <tr>
+                  <th>SIZE</th>
+                  <th>CHEST</th>
+                  <th>WAIST</th>
+                  <th>HIPS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>XS</td>
+                  <td>34-36"</td>
+                  <td>28-30"</td>
+                  <td>35-37"</td>
+                </tr>
+                <tr>
+                  <td>S</td>
+                  <td>36-38"</td>
+                  <td>30-32"</td>
+                  <td>37-39"</td>
+                </tr>
+                <tr>
+                  <td>M</td>
+                  <td>38-40"</td>
+                  <td>32-34"</td>
+                  <td>39-41"</td>
+                </tr>
+                <tr>
+                  <td>L</td>
+                  <td>40-43"</td>
+                  <td>34-37"</td>
+                  <td>41-44"</td>
+                </tr>
+                <tr>
+                  <td>XL</td>
+                  <td>43-46"</td>
+                  <td>37-40"</td>
+                  <td>44-47"</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="measuring-guide">
+        <h2>HOW TO MEASURE</h2>
+        <div class="measuring-grid">
+          <div class="measuring-item">
+            <h3>BUST/CHEST</h3>
+            <p>Measure around the fullest part of your bust/chest, keeping the tape parallel to the floor.</p>
+          </div>
+          <div class="measuring-item">
+            <h3>WAIST</h3>
+            <p>Measure around the narrowest part of your natural waistline, just above your belly button.</p>
+          </div>
+          <div class="measuring-item">
+            <h3>HIPS</h3>
+            <p>Measure around the fullest part of your hips, approximately 8 inches below your waist.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fit-tips">
+        <h2>FIT TIPS</h2>
+        <ul>
+          <li>Between sizes? We recommend sizing up for a more relaxed fit.</li>
+          <li>Our garments are designed with a modern, tailored fit.</li>
+          <li>Check individual product pages for specific fit notes.</li>
+          <li>All measurements are approximate and may vary slightly by style.</li>
+        </ul>
+      </div>
+
+      <div class="size-help">
+        <h3>STILL UNSURE?</h3>
+        <p>Our customer service team is happy to help you find the perfect fit.</p>
+        <p><a href="/pages/contact">Contact Us</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .size-guide-content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .heading-1 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .size-guide-intro {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 64px;
+  }
+
+  .size-tables {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-bottom: 64px;
+  }
+
+  .size-table-wrapper h2 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+  }
+
+  .size-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+  }
+
+  .size-table thead {
+    background: #f8f8f8;
+  }
+
+  .size-table th,
+  .size-table td {
+    padding: 16px;
+    text-align: left;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+  }
+
+  .size-table th {
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .size-table td:first-child {
+    font-weight: 500;
+  }
+
+  .measuring-guide {
+    padding: 48px 0;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 48px;
+  }
+
+  .measuring-guide h2 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .measuring-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+  }
+
+  .measuring-item h3 {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .measuring-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  .fit-tips {
+    margin-bottom: 48px;
+  }
+
+  .fit-tips h2 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .fit-tips ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .fit-tips li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.8);
+    padding-left: 24px;
+    position: relative;
+    margin-bottom: 12px;
+  }
+
+  .fit-tips li::before {
+    content: '•';
+    position: absolute;
+    left: 8px;
+  }
+
+  .size-help {
+    text-align: center;
+    padding: 48px;
+    background: #f8f8f8;
+  }
+
+  .size-help h3 {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .size-help p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 8px;
+  }
+
+  .size-help a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    transition: opacity 0.2s ease;
+  }
+
+  .size-help a:hover {
+    opacity: 0.6;
+  }
+
+  @media screen and (max-width: 749px) {
+    .size-tables {
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+
+    .measuring-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .size-help {
+      padding: 32px 24px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Size Guide",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Size Guide"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Size Guide"
+    }
+  ]
+}
+{% endschema %}

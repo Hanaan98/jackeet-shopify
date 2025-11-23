@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "press": {
+      "type": "press",
+      "settings": {
+        "heading": "Press & Media"
+      }
+    }
+  },
+  "order": ["press"]
+}

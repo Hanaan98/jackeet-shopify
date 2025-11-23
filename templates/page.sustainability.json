@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "sustainability": {
+      "type": "sustainability",
+      "settings": {
+        "heading": "Sustainability"
+      }
+    }
+  },
+  "order": ["sustainability"]
+}

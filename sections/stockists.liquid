@@ -1,0 +1,194 @@
+{% liquid
+  assign heading = section.settings.heading
+%}
+
+<div class="section spacing-style color-{{ section.settings.color_scheme }}">
+  <div class="section-inner page-width">
+    <div class="stockists-content">
+      {% if heading != blank %}
+        <h1 class="heading-1">{{ heading }}</h1>
+      {% endif %}
+
+      <p class="stockists-intro">Currently, JACKEETA is available exclusively through our online store. This allows us to maintain the highest quality standards while offering exceptional value directly to you.</p>
+
+      <div class="stockists-benefits">
+        <h2>WHY SHOP DIRECT?</h2>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <h3>BETTER PRICES</h3>
+            <p>No retail markups means premium quality at accessible prices.</p>
+          </div>
+          <div class="benefit-item">
+            <h3>FULL COLLECTION</h3>
+            <p>Access to our complete range, not limited by store inventory.</p>
+          </div>
+          <div class="benefit-item">
+            <h3>EXPERT SERVICE</h3>
+            <p>Direct communication with our customer service team.</p>
+          </div>
+          <div class="benefit-item">
+            <h3>CONVENIENT</h3>
+            <p>Shop anytime, anywhere with delivery to your door.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stockists-future">
+        <h2>COMING SOON</h2>
+        <p>We're exploring partnerships with select retailers who share our values. Sign up for our newsletter to be the first to know when JACKEETA becomes available in stores near you.</p>
+      </div>
+
+      <div class="stockists-cta">
+        <h3>SHOP NOW</h3>
+        <p>Discover the full JACKEETA collection online.</p>
+        <a href="/collections/all" class="button button--primary">BROWSE COLLECTION</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .stockists-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .heading-1 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .stockists-intro {
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 64px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .stockists-benefits {
+    margin-bottom: 64px;
+  }
+
+  .stockists-benefits h2 {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+  }
+
+  .benefit-item {
+    text-align: center;
+  }
+
+  .benefit-item h3 {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .benefit-item p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  .stockists-future {
+    padding: 48px;
+    background: #f8f8f8;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .stockists-future h2 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .stockists-future p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .stockists-cta {
+    text-align: center;
+    padding: 64px 32px;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .stockists-cta h3 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .stockists-cta p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 32px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .benefits-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .stockists-future {
+      padding: 32px 24px;
+    }
+
+    .stockists-cta {
+      padding: 48px 16px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Stockists",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Where To Buy"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Stockists"
+    }
+  ]
+}
+{% endschema %}

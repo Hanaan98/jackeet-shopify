@@ -615,6 +615,34 @@
     }
   }
 
+  /* Modern hover underline for menu items */
+  .menu-list__link {
+    position: relative;
+  }
+
+  .menu-list__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: #000;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+
+  .menu-list__link:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  /* Adjust for mobile - no hover effect on touch devices */
+  @media (hover: none) {
+    .menu-list__link::after {
+      display: none;
+    }
+  }
+
   /* When the header is transparent, add a margin to a potential header-section below it */
   .header-section:has(.header[transparent]) + .shopify-section {
     margin-top: var(--header-height);

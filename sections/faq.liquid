@@ -1,0 +1,301 @@
+{% liquid
+  assign heading = section.settings.heading
+%}
+
+<div class="section spacing-style color-{{ section.settings.color_scheme }}">
+  <div class="section-inner page-width">
+    <div class="faq-content">
+      {% if heading != blank %}
+        <h1 class="heading-1">{{ heading }}</h1>
+      {% endif %}
+
+      <p class="faq-intro">Find answers to commonly asked questions about orders, shipping, returns, and more.</p>
+
+      <div class="faq-sections">
+        <div class="faq-category">
+          <h2>ORDERING</h2>
+          
+          <details class="faq-item">
+            <summary>How do I place an order?</summary>
+            <p>Browse our collections, select your desired items, choose your size, and add them to your cart. When ready, proceed to checkout where you'll enter your shipping and payment information.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I modify or cancel my order?</summary>
+            <p>Orders can be modified or canceled within 1 hour of placement. Contact us immediately at hello@jackeeta.com with your order number. Once an order has been processed, it cannot be changed.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Do you accept international orders?</summary>
+            <p>Yes, we ship to select countries worldwide. International shipping costs and delivery times vary by destination. Customs duties and taxes are the responsibility of the customer.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What payment methods do you accept?</summary>
+            <p>We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and Shop Pay. All transactions are secure and encrypted.</p>
+          </details>
+        </div>
+
+        <div class="faq-category">
+          <h2>SHIPPING</h2>
+          
+          <details class="faq-item">
+            <summary>How long does shipping take?</summary>
+            <p>Standard shipping takes 5-7 business days. Express shipping (2-3 days) and Next Day Delivery options are available. Processing time is 1-2 business days before shipment.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Do you offer free shipping?</summary>
+            <p>Yes! We offer free standard shipping on all orders over $100.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How can I track my order?</summary>
+            <p>Once your order ships, you'll receive an email with a tracking number. You can track your package through our shipping partner's website or in your account dashboard.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What if my package is lost or damaged?</summary>
+            <p>Contact us immediately at hello@jackeeta.com with your order number and photos if applicable. We'll work with you to resolve the issue quickly.</p>
+          </details>
+        </div>
+
+        <div class="faq-category">
+          <h2>RETURNS & EXCHANGES</h2>
+          
+          <details class="faq-item">
+            <summary>What is your return policy?</summary>
+            <p>We accept returns within 30 days of delivery. Items must be unworn, unwashed, and in original condition with all tags attached. See our full <a href="/pages/shipping-returns">Shipping & Returns policy</a>.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How do I return an item?</summary>
+            <p>Email returns@jackeeta.com with your order number. We'll send you a return authorization and prepaid shipping label. Package your item securely and drop it off at your nearest shipping location.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>When will I receive my refund?</summary>
+            <p>Refunds are processed within 5-7 business days after we receive your return. The amount will be credited to your original payment method.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I exchange an item?</summary>
+            <p>For the fastest service, we recommend returning your item for a refund and placing a new order for the size or color you prefer.</p>
+          </details>
+        </div>
+
+        <div class="faq-category">
+          <h2>PRODUCTS</h2>
+          
+          <details class="faq-item">
+            <summary>How do I find the right size?</summary>
+            <p>Refer to our comprehensive <a href="/pages/size-guide">Size Guide</a> with detailed measurements. If you're between sizes, we recommend sizing up.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How should I care for my JACKEETA garments?</summary>
+            <p>Care instructions are provided on the label inside each garment. Visit our <a href="/pages/care-instructions">Care Instructions</a> page for detailed guidance by fabric type.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Are your products sustainable?</summary>
+            <p>Yes, sustainability is core to our values. We use responsibly sourced materials, ethical production practices, and design for longevity. Learn more on our <a href="/pages/sustainability">Sustainability</a> page.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>When will sold out items be restocked?</summary>
+            <p>Restock timing varies by item. Sign up for back-in-stock notifications on product pages to be notified when items are available again.</p>
+          </details>
+        </div>
+
+        <div class="faq-category">
+          <h2>ACCOUNT & SUPPORT</h2>
+          
+          <details class="faq-item">
+            <summary>Do I need an account to place an order?</summary>
+            <p>No, you can check out as a guest. However, creating an account allows you to track orders, save your favorite items, and check out faster.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How do I reset my password?</summary>
+            <p>Click "Forgot Password?" on the login page. Enter your email address and we'll send you instructions to reset your password.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How can I contact customer service?</summary>
+            <p>Email us at hello@jackeeta.com or use our <a href="/pages/contact">contact form</a>. We're available Monday-Friday, 9:00 AM - 6:00 PM and respond within 24 hours.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Do you have physical stores?</summary>
+            <p>Currently, JACKEETA operates exclusively online, allowing us to offer premium quality at accessible prices without retail markups.</p>
+          </details>
+        </div>
+      </div>
+
+      <div class="faq-contact">
+        <h3>CAN'T FIND YOUR ANSWER?</h3>
+        <p>Our customer service team is here to help.</p>
+        <a href="/pages/contact" class="button button--primary">CONTACT US</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .faq-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .heading-1 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .faq-intro {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 64px;
+  }
+
+  .faq-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-bottom: 64px;
+  }
+
+  .faq-category h2 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-item summary {
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding-right: 32px;
+    position: relative;
+    user-select: none;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    font-size: 24px;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item[open] summary::after {
+    transform: rotate(45deg);
+  }
+
+  .faq-item p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.7);
+    margin-top: 16px;
+    padding-right: 32px;
+  }
+
+  .faq-item a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    transition: opacity 0.2s ease;
+  }
+
+  .faq-item a:hover {
+    opacity: 0.6;
+  }
+
+  .faq-contact {
+    text-align: center;
+    padding: 64px 32px;
+    background: #f8f8f8;
+  }
+
+  .faq-contact h3 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .faq-contact p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 24px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .faq-sections {
+      gap: 32px;
+    }
+
+    .faq-item summary,
+    .faq-item p {
+      padding-right: 24px;
+    }
+
+    .faq-contact {
+      padding: 48px 24px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ"
+    }
+  ]
+}
+{% endschema %}

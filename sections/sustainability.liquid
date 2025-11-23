@@ -1,0 +1,294 @@
+{% liquid
+  assign heading = section.settings.heading
+%}
+
+<div class="section spacing-style color-{{ section.settings.color_scheme }}">
+  <div class="section-inner page-width">
+    <div class="sustainability-content">
+      {% if heading != blank %}
+        <h1 class="heading-1">{{ heading }}</h1>
+      {% endif %}
+
+      <p class="sustainability-intro">At JACKEETA, sustainability isn't an afterthought – it's woven into every decision we make. We're committed to creating beautiful clothing that respects both people and planet.</p>
+
+      <div class="sustainability-sections">
+        <div class="sustainability-pillar">
+          <div class="pillar-number">01</div>
+          <h2>RESPONSIBLE SOURCING</h2>
+          <p>We carefully select our materials from certified suppliers who share our values. Our natural fibers are sourced from mills that prioritize environmental responsibility and fair labor practices.</p>
+          <ul>
+            <li>Organic cotton from GOTS-certified farms</li>
+            <li>Wool from mulesing-free farms</li>
+            <li>Linen from European flax fields</li>
+            <li>Recycled materials where appropriate</li>
+            <li>Traceable supply chains</li>
+          </ul>
+        </div>
+
+        <div class="sustainability-pillar">
+          <div class="pillar-number">02</div>
+          <h2>QUALITY OVER QUANTITY</h2>
+          <p>The most sustainable garment is one that lasts. We design with longevity in mind, creating timeless pieces that transcend trends and can be worn for years.</p>
+          <ul>
+            <li>Durable construction techniques</li>
+            <li>Reinforced seams and stress points</li>
+            <li>Timeless designs that don't date</li>
+            <li>Easy to repair and maintain</li>
+            <li>Classic silhouettes that endure</li>
+          </ul>
+        </div>
+
+        <div class="sustainability-pillar">
+          <div class="pillar-number">03</div>
+          <h2>ETHICAL PRODUCTION</h2>
+          <p>We partner with factories that uphold the highest standards of worker welfare. Every person involved in making our garments deserves fair wages, safe conditions, and respect.</p>
+          <ul>
+            <li>Fair wage commitments</li>
+            <li>Safe working environments</li>
+            <li>Regular factory audits</li>
+            <li>Long-term partnerships</li>
+            <li>No child or forced labor</li>
+          </ul>
+        </div>
+
+        <div class="sustainability-pillar">
+          <div class="pillar-number">04</div>
+          <h2>REDUCING WASTE</h2>
+          <p>We're constantly working to minimize waste throughout our operations, from pattern cutting to packaging.</p>
+          <ul>
+            <li>Efficient pattern making to reduce fabric waste</li>
+            <li>Minimal, recyclable packaging</li>
+            <li>Responsible inventory management</li>
+            <li>Upcycling fabric scraps</li>
+            <li>Plastic-free where possible</li>
+          </ul>
+        </div>
+
+        <div class="sustainability-pillar">
+          <div class="pillar-number">05</div>
+          <h2>TRANSPARENCY</h2>
+          <p>We believe you have a right to know where your clothes come from and how they're made. We're committed to openness about our practices and continuous improvement.</p>
+          <ul>
+            <li>Clear material information</li>
+            <li>Factory location disclosure</li>
+            <li>Honest about our challenges</li>
+            <li>Regular sustainability reporting</li>
+            <li>Open to customer questions</li>
+          </ul>
+        </div>
+
+        <div class="sustainability-pillar">
+          <div class="pillar-number">06</div>
+          <h2>CIRCULARITY</h2>
+          <p>We're exploring ways to extend the life of our garments and keep them out of landfills.</p>
+          <ul>
+            <li>Care instructions to extend garment life</li>
+            <li>Repair guides and services</li>
+            <li>Take-back programs (coming soon)</li>
+            <li>Resale platform (in development)</li>
+            <li>Recycling partnerships</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sustainability-commitment">
+        <h2>OUR COMMITMENT</h2>
+        <p>Sustainability is a journey, not a destination. We're not perfect, but we're dedicated to continuous improvement. We regularly assess our practices, listen to our community, and seek better ways to operate.</p>
+        <p>Every purchase you make supports these efforts. Together, we can build a more sustainable fashion industry – one thoughtfully made garment at a time.</p>
+      </div>
+
+      <div class="sustainability-contact">
+        <h3>QUESTIONS ABOUT OUR PRACTICES?</h3>
+        <p>We welcome your inquiries about our sustainability efforts.</p>
+        <a href="/pages/contact">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .sustainability-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .heading-1 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .sustainability-intro {
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 64px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sustainability-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    margin-bottom: 64px;
+  }
+
+  .sustainability-pillar {
+    position: relative;
+  }
+
+  .pillar-number {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 8px;
+  }
+
+  .sustainability-pillar h2 {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .sustainability-pillar > p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+  }
+
+  .sustainability-pillar ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  .sustainability-pillar li {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .sustainability-pillar li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .sustainability-commitment {
+    padding: 48px;
+    background: #f8f8f8;
+    margin-bottom: 48px;
+  }
+
+  .sustainability-commitment h2 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .sustainability-commitment p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .sustainability-commitment p:last-child {
+    margin-bottom: 0;
+  }
+
+  .sustainability-contact {
+    text-align: center;
+    padding: 48px 32px;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .sustainability-contact h3 {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .sustainability-contact p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 16px;
+  }
+
+  .sustainability-contact a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    font-size: 16px;
+    transition: opacity 0.2s ease;
+  }
+
+  .sustainability-contact a:hover {
+    opacity: 0.6;
+  }
+
+  @media screen and (max-width: 749px) {
+    .sustainability-sections {
+      gap: 48px;
+    }
+
+    .sustainability-pillar ul {
+      grid-template-columns: 1fr;
+    }
+
+    .sustainability-commitment {
+      padding: 32px 24px;
+    }
+
+    .sustainability-contact {
+      padding: 32px 16px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Sustainability",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Sustainability"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sustainability"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,183 @@
+{% liquid
+  assign heading = section.settings.heading
+%}
+
+<div class="section spacing-style color-{{ section.settings.color_scheme }}">
+  <div class="section-inner page-width">
+    <div class="policy-content">
+      {% if heading != blank %}
+        <h1 class="heading-1">{{ heading }}</h1>
+      {% endif %}
+
+      <div class="policy-grid">
+        <div class="policy-section">
+          <h2>SHIPPING</h2>
+          <h3>Processing Time</h3>
+          <p>Orders are processed within 1-2 business days. Orders placed on weekends or holidays will be processed the next business day.</p>
+          
+          <h3>Shipping Methods & Delivery Times</h3>
+          <ul>
+            <li><strong>Standard Shipping (5-7 business days)</strong> - Free on orders over $100</li>
+            <li><strong>Express Shipping (2-3 business days)</strong> - $15</li>
+            <li><strong>Next Day Delivery</strong> - $25 (orders placed before 2pm)</li>
+          </ul>
+
+          <h3>International Shipping</h3>
+          <p>We ship to select countries worldwide. International shipping times vary by destination (7-21 business days). Customs fees and import duties are the responsibility of the customer.</p>
+
+          <h3>Order Tracking</h3>
+          <p>Once your order ships, you'll receive a tracking number via email. Track your package through our shipping partners' websites.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>RETURNS & EXCHANGES</h2>
+          <h3>30-Day Return Policy</h3>
+          <p>We accept returns within 30 days of delivery. Items must be unworn, unwashed, and in original condition with all tags attached.</p>
+
+          <h3>How to Return</h3>
+          <ol>
+            <li>Contact our customer service team at <a href="mailto:returns@jackeeta.com">returns@jackeeta.com</a></li>
+            <li>Receive your return authorization and prepaid shipping label</li>
+            <li>Package your item securely with the original packaging</li>
+            <li>Drop off at your nearest shipping location</li>
+          </ol>
+
+          <h3>Refunds</h3>
+          <p>Refunds are processed within 5-7 business days after we receive your return. The original payment method will be credited. Shipping costs are non-refundable.</p>
+
+          <h3>Exchanges</h3>
+          <p>To exchange an item for a different size or color, please return the original item and place a new order. This ensures you receive your preferred item as quickly as possible.</p>
+
+          <h3>Non-Returnable Items</h3>
+          <ul>
+            <li>Final sale items</li>
+            <li>Personalized or custom items</li>
+            <li>Items without original tags</li>
+            <li>Worn or altered items</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h2>NEED HELP?</h2>
+          <p>If you have any questions about shipping or returns, our customer service team is here to help.</p>
+          <p><strong>Email:</strong> <a href="mailto:hello@jackeeta.com">hello@jackeeta.com</a></p>
+          <p><strong>Hours:</strong> Monday - Friday, 9:00 AM - 6:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .policy-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .heading-1 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 48px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .policy-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .policy-section {
+    padding-bottom: 48px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .policy-section:last-child {
+    border-bottom: none;
+  }
+
+  .policy-section h2 {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .policy-section h3 {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+
+  .policy-section p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 16px;
+  }
+
+  .policy-section ul,
+  .policy-section ol {
+    margin-left: 24px;
+    margin-bottom: 16px;
+  }
+
+  .policy-section li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 8px;
+  }
+
+  .policy-section a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    transition: opacity 0.2s ease;
+  }
+
+  .policy-section a:hover {
+    opacity: 0.6;
+  }
+
+  @media screen and (max-width: 749px) {
+    .policy-grid {
+      gap: 32px;
+    }
+
+    .policy-section {
+      padding-bottom: 32px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Shipping & Returns",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shipping & Returns"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shipping & Returns"
+    }
+  ]
+}
+{% endschema %}
