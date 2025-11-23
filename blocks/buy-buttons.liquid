@@ -286,6 +286,7 @@
     gap: 12px;
     width: 100%;
     align-items: stretch;
+    margin-block-start: 2rem;
   }
 
   .buy-buttons-with-wishlist > .add-to-cart-block {
@@ -303,40 +304,51 @@
     position: static;
     width: 100%;
     height: 100%;
+    min-height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    transition: all 0.2s ease;
+    background: transparent;
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.2);
+    border-radius: 0;
+    transition: all 0.25s ease;
     cursor: pointer;
   }
 
   .pdp-wishlist-wrapper wishlist-button:hover {
-    border-color: rgba(0, 0, 0, 0.3);
-    background: rgba(0, 0, 0, 0.02);
+    border-color: var(--color-foreground);
+    background: transparent;
     transform: none;
   }
 
   .pdp-wishlist-wrapper wishlist-button svg {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
+    stroke-width: 1.5;
   }
 
   .pdp-wishlist-wrapper wishlist-button.is-wishlisted {
-    background: rgba(220, 38, 38, 0.05);
-    border-color: rgba(220, 38, 38, 0.2);
+    background: transparent;
+    border-color: var(--color-foreground);
+  }
+
+  .pdp-wishlist-wrapper wishlist-button.is-wishlisted svg {
+    fill: var(--color-foreground);
   }
 
   .pdp-wishlist-wrapper wishlist-button.is-wishlisted:hover {
-    background: rgba(220, 38, 38, 0.1);
-    border-color: rgba(220, 38, 38, 0.3);
+    background: var(--color-foreground);
+  }
+
+  .pdp-wishlist-wrapper wishlist-button.is-wishlisted:hover svg {
+    fill: var(--color-background);
+    stroke: var(--color-background);
   }
 
   @media screen and (max-width: 749px) {
     .buy-buttons-with-wishlist {
       gap: 8px;
+      margin-block-start: 1.5rem;
     }
 
     .buy-buttons-with-wishlist > .add-to-cart-block {
@@ -345,6 +357,10 @@
 
     .pdp-wishlist-wrapper {
       flex: 0 1 calc(25% - 4px);
+    }
+
+    .pdp-wishlist-wrapper wishlist-button {
+      min-height: 48px;
     }
 
     .pdp-wishlist-wrapper wishlist-button svg {

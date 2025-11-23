@@ -92,13 +92,166 @@
 {% stylesheet %}
   .product-information {
     gap: var(--gap) 0;
+    padding-block: 0;
   }
 
-  /* Base grid layout */
+  /* Luxury PDP Style - Mango/Calvin Klein inspired */
   .product-information__grid {
     display: grid;
     grid-template-columns: subgrid;
     grid-column: 1 / -1;
+    gap: 0;
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: 990px) {
+    .product-information__grid {
+      display: flex;
+      gap: 0;
+      align-items: flex-start;
+    }
+
+    .product-information__media {
+      flex: 1 1 60%;
+      max-width: 60%;
+    }
+
+    .product-details {
+      flex: 1 1 40%;
+      max-width: 40%;
+      padding-inline-start: clamp(2rem, 5vw, 4rem);
+    }
+  }
+
+  /* Clean minimal styling */
+  .product-information h1,
+  .product-information .h1 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .product-information .price {
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin-block: 1.5rem;
+  }
+
+  /* Typography refinements */
+  .product-details {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .product-details p {
+    color: rgb(var(--color-foreground-rgb) / 0.85);
+  }
+
+  /* Variant picker minimal style */
+  .variant-picker {
+    margin-block: 2rem;
+  }
+
+  .variant-picker__label {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    color: rgb(var(--color-foreground-rgb) / 0.7);
+  }
+
+  .variant-option {
+    font-size: 0.875rem;
+    padding: 0.625rem 1.25rem;
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.15);
+    background: transparent;
+    transition: all 0.2s ease;
+  }
+
+  .variant-option:hover {
+    border-color: rgb(var(--color-foreground-rgb) / 0.4);
+  }
+
+  .variant-option.selected,
+  .variant-option[aria-checked="true"] {
+    border-color: var(--color-foreground);
+    background: var(--color-foreground);
+    color: var(--color-background);
+  }
+
+  /* Buttons clean style */
+  .product-form-buttons button,
+  .buy-buttons-with-wishlist button {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    border-radius: 0;
+    transition: all 0.25s ease;
+  }
+
+  .button-primary,
+  .add-to-cart-button {
+    background: var(--color-foreground);
+    color: var(--color-background);
+    border: 1px solid var(--color-foreground);
+  }
+
+  .button-primary:hover,
+  .add-to-cart-button:hover {
+    background: transparent;
+    color: var(--color-foreground);
+  }
+
+  /* Accordion minimal */
+  .accordion {
+    border-top: 1px solid rgb(var(--color-foreground-rgb) / 0.1);
+    margin-block-start: 2.5rem;
+  }
+
+  .accordion__item {
+    border-bottom: 1px solid rgb(var(--color-foreground-rgb) / 0.1);
+  }
+
+  .accordion__button {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-block: 1.25rem;
+  }
+
+  .accordion__content {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    padding-block-end: 1.5rem;
+    color: rgb(var(--color-foreground-rgb) / 0.8);
+  }
+
+  /* Remove unnecessary spacing */
+  .product-information .spacing-style {
+    padding-inline: 0;
+  }
+
+  @media screen and (max-width: 989px) {
+    .product-information__media {
+      margin-bottom: 2rem;
+    }
+
+    .product-details {
+      padding-inline: 1rem;
+    }
+  }
+
+  /* Base grid layout */
+  .product-information__grid {
+    grid-template-columns: subgrid;
   }
 
   /* Default column positions */
