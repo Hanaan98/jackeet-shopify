@@ -14,6 +14,10 @@
   >
     {{ 'icon-cart.svg' | inline_asset_content }}
   </span>
+  <span class="header-actions__label header-actions__label--with-count">
+    Bag
+    <span class="header-actions__count">({{ cart.item_count }})</span>
+  </span>
 
   {% render 'cart-bubble', limit: 100, live_region: true, test_id: test_id %}
 </cart-icon>
@@ -27,6 +31,16 @@
     .svg-wrapper {
       --cart-bubble-top: 4px;
       --cart-bubble-right: 4px;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    cart-icon .cart-bubble {
+      display: none;
+    }
+
+    cart-icon .svg-wrapper {
+      mask: none !important;
     }
   }
 {% endstylesheet %}

@@ -42,6 +42,7 @@
     >
       {{- 'icon-account.svg' | inline_asset_content -}}
     </span>
+    <span class="header-actions__label">Log in</span>
   {%- endif -%}
 </{{ tag }}>
 
@@ -52,11 +53,12 @@
     border: none;
     background: none;
     height: var(--button-size);
-    width: var(--button-size);
+    width: auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: center;
     justify-content: center;
-    align-content: center;
+    gap: 6px;
     transition: color var(--animation-speed) var(--animation-easing);
     anchor-name: --account-button-trigger;
   }
