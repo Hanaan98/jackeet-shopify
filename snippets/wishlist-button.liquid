@@ -28,6 +28,11 @@
     position: relative;
   }
 
+  /* Make the product card link exclude the wishlist button area */
+  .product-card__link {
+    pointer-events: auto;
+  }
+
   .wishlist-button {
     position: absolute;
     top: 8px;
@@ -44,9 +49,20 @@
     transition: transform 0.2s ease, background-color 0.2s ease;
     backdrop-filter: blur(8px);
     border: 1px solid rgba(0, 0, 0, 0.08);
-    pointer-events: auto;
+    pointer-events: auto !important;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+    isolation: isolate;
+  }
+
+  /* Prevent the product link from capturing events on wishlist button */
+  .product-card:has(.wishlist-button) .product-card__link {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%
+    );
   }
 
   @media screen and (min-width: 750px) {

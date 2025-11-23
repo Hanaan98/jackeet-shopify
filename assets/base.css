@@ -80,10 +80,18 @@ select {
 .product-card__link {
   position: absolute;
   inset: 0;
+  z-index: 1;
+}
+
+/* Ensure wishlist button is above the product link */
+.product-card .wishlist-button {
+  z-index: 10;
+  position: absolute;
 }
 
 .product-card__content {
   position: relative;
+  z-index: 2;
 }
 
 .product-card__content {

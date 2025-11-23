@@ -8,7 +8,9 @@ export class WishlistButton extends Component {
   connectedCallback() {
     super.connectedCallback();
     
-    this.addEventListener('click', this.handleClick);
+    this.addEventListener('click', this.handleClick, true);
+    this.addEventListener('mousedown', this.handleMouseDown, true);
+    this.addEventListener('touchstart', this.handleTouchStart, { passive: false, capture: true });
     this.updateState();
     
     // Listen for wishlist updates
@@ -17,8 +19,29 @@ export class WishlistButton extends Component {
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    this.removeEventListener('click', this.handleClick);
+    this.removeEventListener('click', this.handleClick, true);
+    this.removeEventListener('mousedown', this.handleMouseDown, true);
+    this.removeEventListener('touchstart', this.handleTouchStart, true);
   }
+
+  /**
+   * Handle mousedown to prevent any bubbling
+   * @param {Event} event
+   */
+  handleMouseDown = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+  };
+
+  /**
+   * Handle touch start to prevent any bubbling
+   * @param {Event} event
+   */
+  handleTouchStart = (event) => {
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+  };
 
   /**
    * Handle click on wishlist button
