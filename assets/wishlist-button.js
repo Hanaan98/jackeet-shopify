@@ -55,6 +55,8 @@ export class WishlistButton extends Component {
    */
   handleClick = (event) => {
     console.log('[WishlistButton] Click event on product:', this.dataset.productId);
+    console.log('[WishlistButton] Product handle:', this.dataset.productHandle);
+    console.log('[WishlistButton] All dataset:', this.dataset);
     console.log('[WishlistButton] Event details:', {
       target: event.target,
       currentTarget: event.currentTarget,
@@ -74,7 +76,11 @@ export class WishlistButton extends Component {
       return;
     }
     
-    console.log('[WishlistButton] Toggling wishlist for product:', productId, productHandle);
+    if (!productHandle) {
+      console.error('[WishlistButton] No product handle found! This will cause issues on the favourites page.');
+    }
+    
+    console.log('[WishlistButton] Toggling wishlist for product:', productId, 'handle:', productHandle);
     const isAdded = toggleWishlist(productId, productHandle);
     console.log('[WishlistButton] Toggle result:', isAdded ? 'Added' : 'Removed');
     

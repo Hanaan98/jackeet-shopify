@@ -91,6 +91,26 @@
           {%- render 'submenu-font-styles', settings: block_settings %}
         "
       >
+        <div class="menu-drawer__mobile-actions">
+          <a href="/search" class="menu-drawer__mobile-action">
+            <span class="svg-wrapper">{{- 'icon-search.svg' | inline_asset_content -}}</span>
+            <span>SEARCH</span>
+          </a>
+          <a href="/pages/favourites" class="menu-drawer__mobile-action">
+            <span class="svg-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>WISHLIST</span>
+          </a>
+          {% if shop.customer_accounts_enabled %}
+            <a href="{{ routes.account_url }}" class="menu-drawer__mobile-action">
+              <span class="svg-wrapper">{{- 'icon-account.svg' | inline_asset_content -}}</span>
+              <span>{% if customer %}ACCOUNT{% else %}LOG IN{% endif %}</span>
+            </a>
+          {% endif %}
+        </div>
         <ul
           class="menu-drawer__menu has-submenu"
           role="list"
@@ -689,6 +709,54 @@
     @media screen and (min-width: 750px) {
       margin-top: var(--drawer-header-desktop-top);
     }
+  }
+
+  /* Mobile Actions in Drawer */
+  .menu-drawer__mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: var(--padding-lg) var(--padding-xl);
+    border-bottom: 1px solid rgba(var(--color-foreground-rgb), 0.1);
+    margin-bottom: var(--margin-md);
+  }
+
+  @media screen and (min-width: 990px) {
+    .menu-drawer__mobile-actions {
+      display: none;
+    }
+  }
+
+  .menu-drawer__mobile-action {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-md);
+    padding: var(--padding-md) 0;
+    text-decoration: none;
+    color: var(--color-foreground);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: opacity 0.2s ease;
+  }
+
+  .menu-drawer__mobile-action:hover {
+    opacity: 0.7;
+  }
+
+  .menu-drawer__mobile-action .svg-wrapper {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .menu-drawer__mobile-action svg {
+    width: 20px;
+    height: 20px;
   }
 
   details:not([open]) .header__icon--menu .header-drawer-icon--close {

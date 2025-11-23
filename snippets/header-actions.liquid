@@ -257,6 +257,17 @@
     }
   }
 
+  /* Hide search, login, wishlist on mobile - only show bag */
+  @media screen and (max-width: 989px) {
+    .action__wishlist,
+    .action__search,
+    .account-button,
+    .account-popover,
+    .predictive-search {
+      display: none !important;
+    }
+  }
+
   .header-actions__label--with-count {
     display: inline;
   }

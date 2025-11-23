@@ -27,13 +27,34 @@
 
 <script>
   (async function() {
-    const { getWishlist } = await import('{{ 'wishlist.js' | asset_url }}');
+    const { getWishlist, clearWishlist } = await import('{{ 'wishlist.js' | asset_url }}');
     
     const emptyState = document.getElementById('favourites-empty-state');
     const loading = document.getElementById('favourites-loading');
     const grid = document.getElementById('favourites-grid');
     
     const wishlist = getWishlist();
+    
+    console.log('[Favourites] Current wishlist:', wishlist);
+    
+    // Check if all items are in old format (just numbers)
+    const hasOldFormat = wishlist.some(item => typeof item === 'number');
+    const hasNewFormat = wishlist.some(item => typeof item === 'object');
+    
+    if (hasOldFormat && !hasNewFormat) {
+      console.log('[Favourites] Detected old wishlist format, clearing...');
+      clearWishlist();
+      loading.style.display = 'none';
+      emptyState.style.display = 'block';
+      
+      const helpText = document.createElement('p');
+      helpText.style.marginTop = '1rem';
+      helpText.style.fontSize = '0.875rem';
+      helpText.style.color = 'var(--color-foreground-secondary)';
+      helpText.textContent = 'Your wishlist was cleared due to an update. Please add your favorite products again.';
+      emptyState.querySelector('.favourites-empty__content').appendChild(helpText);
+      return;
+    }
     
     if (wishlist.length === 0) {
       loading.style.display = 'none';
@@ -45,11 +66,12 @@
     try {
       const productPromises = wishlist.map(async (item) => {
         // Support both old format (just ID) and new format (object with handle)
-        const handle = typeof item === 'object' ? item.handle : null;
+        const handle = typeof item === 'object' && item.handle ? item.handle : null;
         const productId = typeof item === 'object' ? item.id : item;
         
         if (!handle) {
-          console.warn('[Favourites] No handle for product:', productId);
+          console.warn('[Favourites] Old format detected - product ID without handle:', productId);
+          console.log('[Favourites] Please re-add this product to wishlist to store the handle');
           return null;
         }
         
@@ -69,6 +91,16 @@
       if (products.length === 0) {
         loading.style.display = 'none';
         emptyState.style.display = 'block';
+        
+        // Show helpful message if old format detected
+        if (wishlist.length > 0 && wishlist.some(item => typeof item === 'number')) {
+          const helpText = document.createElement('p');
+          helpText.style.marginTop = '1rem';
+          helpText.style.fontSize = '0.875rem';
+          helpText.style.color = 'var(--color-foreground-secondary)';
+          helpText.textContent = 'Please re-add your favorite products to update the wishlist.';
+          emptyState.querySelector('.favourites-empty__content').appendChild(helpText);
+        }
         return;
       }
       
