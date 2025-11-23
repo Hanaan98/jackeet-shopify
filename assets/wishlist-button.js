@@ -54,22 +54,21 @@ export class WishlistButton extends Component {
    * @param {Event} event
    */
   handleClick = (event) => {
-    console.log('[WishlistButton] Click event on product:', this.dataset.productId);
-    console.log('[WishlistButton] Product handle:', this.dataset.productHandle);
-    console.log('[WishlistButton] All dataset:', this.dataset);
-    console.log('[WishlistButton] Event details:', {
-      target: event.target,
-      currentTarget: event.currentTarget,
-      type: event.type,
-      defaultPrevented: event.defaultPrevented
-    });
+    console.log('[WishlistButton] ========== CLICK DEBUG ==========');
+    console.log('[WishlistButton] Element:', this);
+    console.log('[WishlistButton] dataset.productId:', this.dataset.productId);
+    console.log('[WishlistButton] dataset.productHandle:', this.dataset.productHandle);
+    console.log('[WishlistButton] getAttribute productId:', this.getAttribute('data-product-id'));
+    console.log('[WishlistButton] getAttribute productHandle:', this.getAttribute('data-product-handle'));
+    console.log('[WishlistButton] All dataset:', JSON.stringify(this.dataset));
+    console.log('[WishlistButton] ================================');
     
     event.preventDefault();
     event.stopPropagation();
     event.stopImmediatePropagation();
     
     const productId = parseInt(this.dataset.productId || '0');
-    const productHandle = this.dataset.productHandle || '';
+    const productHandle = this.dataset.productHandle || this.getAttribute('data-product-handle') || '';
     
     if (!productId) {
       console.warn('[WishlistButton] No product ID found!');
@@ -77,10 +76,14 @@ export class WishlistButton extends Component {
     }
     
     if (!productHandle) {
-      console.error('[WishlistButton] No product handle found! This will cause issues on the favourites page.');
+      console.error('[WishlistButton] ❌ No product handle found! This will cause issues on the favourites page.');
+      console.error('[WishlistButton] Product ID:', productId);
+      console.error('[WishlistButton] Element HTML:', this.outerHTML);
+    } else {
+      console.log('[WishlistButton] ✅ Handle found:', productHandle);
     }
     
-    console.log('[WishlistButton] Toggling wishlist for product:', productId, 'handle:', productHandle);
+    console.log('[WishlistButton] Calling toggleWishlist with:', { productId, productHandle });
     const isAdded = toggleWishlist(productId, productHandle);
     console.log('[WishlistButton] Toggle result:', isAdded ? 'Added' : 'Removed');
     
