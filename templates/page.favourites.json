@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page"
+    },
+    "favourites": {
+      "type": "favourites-list"
+    }
+  },
+  "order": [
+    "main",
+    "favourites"
+  ]
+}

@@ -12,17 +12,11 @@
   <search-button class="search-action{% if class != blank %} {{ class | strip }}{% endif %}">
     <button
       on:click="#search-modal/showDialog"
-      class="button button-unstyled search-modal__button header-actions__action header-actions__action--with-label"
+      class="button button-unstyled search-modal__button header-actions__action header-actions__action--text-only"
       aria-label="{{ 'content.search_input_label' | t }}"
       aria-haspopup="dialog"
     >
-      <span
-        aria-hidden="true"
-        class="svg-wrapper"
-      >
-        {{ 'icon-search.svg' | inline_asset_content }}
-      </span>
-      <span class="header-actions__label">Search</span>
+      <span class="header-actions__label">SEARCH</span>
     </button>
   </search-button>
 {% endunless %}
@@ -52,9 +46,13 @@
     }
   }
 
-  .search-action .header-actions__action--with-label {
+  .search-action .header-actions__action--text-only {
     flex-direction: row;
     gap: 6px;
     width: auto;
+  }
+
+  .search-action .header-actions__label {
+    display: inline-block;
   }
 {% endstylesheet %}

@@ -19,31 +19,7 @@
   ref="trigger"
   {{ attributes }}
 >
-  {%- if customer.has_avatar? -%}
-    {{ customer | avatar }}
-  {%- elsif customer.first_name or customer.email -%}
-    {%- liquid
-      assign initial = customer.email | first
-
-      if customer.first_name != blank
-        assign initial = customer.first_name | first
-      endif
-    -%}
-    <span
-      class="account-button__avatar"
-      aria-hidden="true"
-    >
-      {{- initial -}}
-    </span>
-  {%- else -%}
-    <span
-      class="account-button__icon"
-      aria-hidden="true"
-    >
-      {{- 'icon-account.svg' | inline_asset_content -}}
-    </span>
-    <span class="header-actions__label">Log in</span>
-  {%- endif -%}
+  <span class="header-actions__label">LOG IN</span>
 </{{ tag }}>
 
 {% stylesheet %}
@@ -52,13 +28,13 @@
     appearance: none;
     border: none;
     background: none;
-    height: var(--button-size);
+    height: auto;
     width: auto;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    padding: 8px 12px;
     transition: color var(--animation-speed) var(--animation-easing);
     anchor-name: --account-button-trigger;
   }

@@ -1,0 +1,95 @@
+{%- doc -%}
+  Renders a wishlist button for product cards
+  @param {object} product - The product object
+{%- enddoc -%}
+
+<script
+  type="module"
+  src="{{ 'wishlist-button.js' | asset_url }}"
+  fetchpriority="low"
+></script>
+
+<wishlist-button
+  class="wishlist-button"
+  data-product-id="{{ product.id }}"
+  data-wishlist-toggle
+  role="button"
+  tabindex="0"
+  aria-label="Add to wishlist"
+>
+  <svg class="wishlist-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+    <path class="wishlist-button__outline" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="wishlist-button__fill" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/>
+  </svg>
+</wishlist-button>
+
+{% stylesheet %}
+  .wishlist-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .wishlist-button:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .wishlist-button__icon {
+    width: 20px;
+    height: 20px;
+    color: var(--color-foreground);
+  }
+
+  .wishlist-button__fill {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .wishlist-button__outline {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+  }
+
+  .wishlist-button.is-wishlisted .wishlist-button__fill {
+    opacity: 1;
+    color: #dc2626;
+  }
+
+  .wishlist-button.is-wishlisted .wishlist-button__outline {
+    opacity: 0;
+  }
+
+  .wishlist-button.is-wishlisted {
+    background: rgba(220, 38, 38, 0.1);
+  }
+
+  .wishlist-button.is-wishlisted:hover {
+    background: rgba(220, 38, 38, 0.15);
+  }
+
+  .wishlist-button--animating {
+    animation: wishlistPulse 0.3s ease;
+  }
+
+  @keyframes wishlistPulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+{% endstylesheet %}

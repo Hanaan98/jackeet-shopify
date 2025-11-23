@@ -8,39 +8,14 @@
   "
   data-testid="cart-icon"
 >
-  <span
-    class="svg-wrapper"
-    aria-hidden="true"
-  >
-    {{ 'icon-cart.svg' | inline_asset_content }}
-  </span>
   <span class="header-actions__label header-actions__label--with-count">
-    Bag
-    <span class="header-actions__count">({{ cart.item_count }})</span>
+    BAG ({{ cart.item_count }})
   </span>
-
   {% render 'cart-bubble', limit: 100, live_region: true, test_id: test_id %}
 </cart-icon>
 
 {% stylesheet %}
-  cart-icon:has(.cart-bubble__text-count:empty) {
-    --cart-bubble-size: 10px;
-    --cart-bubble-top: 9px;
-    --cart-bubble-right: 9px;
-
-    .svg-wrapper {
-      --cart-bubble-top: 4px;
-      --cart-bubble-right: 4px;
-    }
-  }
-
-  @media screen and (min-width: 990px) {
-    cart-icon .cart-bubble {
-      display: none;
-    }
-
-    cart-icon .svg-wrapper {
-      mask: none !important;
-    }
+  cart-icon .cart-bubble {
+    display: none;
   }
 {% endstylesheet %}

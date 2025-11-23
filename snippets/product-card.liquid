@@ -121,6 +121,9 @@
       {{ product.title }}
     </span>
   </a>
+  {% unless onboarding %}
+    {% render 'wishlist-button', product: product %}
+  {% endunless %}
   <div
     class="
       product-card__content

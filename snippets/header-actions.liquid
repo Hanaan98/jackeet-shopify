@@ -7,6 +7,14 @@
 <header-actions
   {{- block.shopify_attributes -}}
 >
+  <a
+    href="/pages/favourites"
+    class="header-actions__action action__wishlist"
+    aria-label="Wishlist"
+  >
+    <span class="header-actions__label">WISHLIST</span>
+  </a>
+
   {% if shop.customer_accounts_enabled %}
     {% render 'account-popover' %}
     {% render 'account-drawer' %}
@@ -228,41 +236,41 @@
   .header-actions__label {
     font-size: 13px;
     font-weight: 400;
-    letter-spacing: 0.01em;
-    line-height: 1;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
     white-space: nowrap;
-    text-transform: none;
-    display: none;
-  }
-
-  @media screen and (min-width: 990px) {
-    .header-actions__label {
-      display: inline-block;
-    }
+    text-transform: uppercase;
+    display: inline-block;
   }
 
   .header-actions__label--with-count {
-    display: flex;
-    align-items: center;
-    gap: 2px;
+    display: inline;
   }
 
-  .header-actions__count {
-    font-size: 13px;
-    font-weight: 400;
-  }
-
-  .header-actions__action--with-label {
-    flex-direction: row;
-    align-items: center;
-    gap: 6px;
+  .header-actions__action--text-only {
     width: auto;
+    height: auto;
+    padding: 8px 12px;
   }
 
   cart-icon {
     display: flex;
     align-items: center;
-    gap: 6px;
+  }
+
+  .action__cart {
+    padding: 8px 12px;
+  }
+
+  .action__wishlist {
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--color-foreground);
+    transition: color var(--animation-speed) var(--animation-easing);
+  }
+
+  .action__wishlist:hover {
+    opacity: 0.7;
   }
 
   .header-actions__cart-icon {
