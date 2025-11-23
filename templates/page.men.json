@@ -1,0 +1,239 @@
+{
+  "sections": {
+    "men-collection": {
+      "type": "collection-men",
+      "settings": {
+        "show_hero": true,
+        "title": "Men's Jackets",
+        "description": "<p>Discover our curated collection of premium men's jackets. From timeless leather to modern varsity styles, each piece is crafted with exceptional quality and attention to detail.</p>",
+        "show_categories": true,
+        "show_load_more": true
+      },
+      "blocks": {
+        "category-1": {
+          "type": "category",
+          "settings": {
+            "category_id": "varsity",
+            "category_name": "VARSITY"
+          }
+        },
+        "category-2": {
+          "type": "category",
+          "settings": {
+            "category_id": "leather",
+            "category_name": "LEATHER"
+          }
+        },
+        "category-3": {
+          "type": "category",
+          "settings": {
+            "category_id": "bomber",
+            "category_name": "BOMBER"
+          }
+        },
+        "category-4": {
+          "type": "category",
+          "settings": {
+            "category_id": "denim",
+            "category_name": "DENIM"
+          }
+        },
+        "category-5": {
+          "type": "category",
+          "settings": {
+            "category_id": "puffer",
+            "category_name": "PUFFER"
+          }
+        },
+        "category-6": {
+          "type": "category",
+          "settings": {
+            "category_id": "windbreaker",
+            "category_name": "WINDBREAKER"
+          }
+        },
+        "product-1": {
+          "type": "product",
+          "settings": {
+            "product_category": "varsity",
+            "product_title": "Classic Varsity Jacket",
+            "product_description": "Premium wool body with genuine leather sleeves",
+            "price": "299",
+            "color_count": "4",
+            "show_colors": true,
+            "is_bestseller": true,
+            "is_new": false
+          }
+        },
+        "product-2": {
+          "type": "product",
+          "settings": {
+            "product_category": "leather",
+            "product_title": "Moto Leather Jacket",
+            "product_description": "Full-grain leather with asymmetric zipper",
+            "price": "599",
+            "color_count": "3",
+            "show_colors": true,
+            "is_bestseller": false,
+            "is_new": true
+          }
+        },
+        "product-3": {
+          "type": "product",
+          "settings": {
+            "product_category": "bomber",
+            "product_title": "MA-1 Bomber Jacket",
+            "product_description": "Flight-inspired design with orange lining",
+            "price": "249",
+            "color_count": "5",
+            "show_colors": true,
+            "is_bestseller": false,
+            "is_new": false
+          }
+        },
+        "product-4": {
+          "type": "product",
+          "settings": {
+            "product_category": "denim",
+            "product_title": "Sherpa Denim Jacket",
+            "product_description": "Classic denim with cozy sherpa lining",
+            "price": "199",
+            "color_count": "2",
+            "show_colors": true,
+            "is_bestseller": true,
+            "is_new": false
+          }
+        },
+        "product-5": {
+          "type": "product",
+          "settings": {
+            "product_category": "puffer",
+            "product_title": "Down Puffer Jacket",
+            "product_description": "Lightweight warmth with 700-fill down",
+            "price": "349",
+            "color_count": "4",
+            "show_colors": true,
+            "is_bestseller": false,
+            "is_new": false
+          }
+        },
+        "product-6": {
+          "type": "product",
+          "settings": {
+            "product_category": "leather",
+            "product_title": "Aviator Leather Jacket",
+            "product_description": "Vintage-inspired with shearling collar",
+            "price": "699",
+            "compare_price": "899",
+            "color_count": "2",
+            "show_colors": true,
+            "is_bestseller": false,
+            "is_new": false
+          }
+        },
+        "product-7": {
+          "type": "product",
+          "settings": {
+            "product_category": "varsity",
+            "product_title": "Heritage Varsity Jacket",
+            "product_description": "Authentic collegiate style with chenille patches",
+            "price": "329",
+            "color_count": "3",
+            "show_colors": true,
+            "is_bestseller": false,
+            "is_new": true
+          }
+        },
+        "product-8": {
+          "type": "product",
+          "settings": {
+            "product_category": "bomber",
+            "product_title": "Suede Bomber Jacket",
+            "product_description": "Soft suede with ribbed collar and cuffs",
+            "price": "429",
+            "color_count": "3",
+            "show_colors": true,
+            "is_bestseller": false,
+            "is_new": false
+          }
+        },
+        "product-9": {
+          "type": "product",
+          "settings": {
+            "product_category": "windbreaker",
+            "product_title": "Technical Windbreaker",
+            "product_description": "Water-resistant nylon with packable design",
+            "price": "149",
+            "color_count": "6",
+            "show_colors": true,
+            "is_bestseller": true,
+            "is_new": false
+          }
+        },
+        "product-10": {
+          "type": "product",
+          "settings": {
+            "product_category": "leather",
+            "product_title": "Racer Leather Jacket",
+            "product_description": "Sleek minimalist design in Italian leather",
+            "price": "649",
+            "color_count": "2",
+            "show_colors": true,
+            "is_bestseller": false,
+            "is_new": true
+          }
+        },
+        "product-11": {
+          "type": "product",
+          "settings": {
+            "product_category": "denim",
+            "product_title": "Raw Denim Trucker Jacket",
+            "product_description": "Selvedge denim that ages beautifully",
+            "price": "229",
+            "color_count": "2",
+            "show_colors": true,
+            "is_bestseller": false,
+            "is_new": false
+          }
+        },
+        "product-12": {
+          "type": "product",
+          "settings": {
+            "product_category": "puffer",
+            "product_title": "Quilted Puffer Jacket",
+            "product_description": "Diamond-quilted design with water-repellent finish",
+            "price": "299",
+            "compare_price": "399",
+            "color_count": "5",
+            "show_colors": true,
+            "is_bestseller": false,
+            "is_new": false
+          }
+        }
+      },
+      "block_order": [
+        "category-1",
+        "category-2",
+        "category-3",
+        "category-4",
+        "category-5",
+        "category-6",
+        "product-1",
+        "product-2",
+        "product-3",
+        "product-4",
+        "product-5",
+        "product-6",
+        "product-7",
+        "product-8",
+        "product-9",
+        "product-10",
+        "product-11",
+        "product-12"
+      ]
+    }
+  },
+  "order": [
+    "men-collection"
+  ]
+}
