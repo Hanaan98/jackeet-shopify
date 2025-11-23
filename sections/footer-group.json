@@ -157,7 +157,7 @@
                   },
                   "blocks": {}
                 },
-                "menu_qHyxag": {
+                "menu_Fj89t6": {
                   "type": "menu",
                   "name": "t:names.menu",
                   "settings": {
@@ -170,7 +170,7 @@
                     "inherit_color_scheme": true,
                     "color_scheme": "",
                     "heading_preset": "h4",
-                    "link_preset": "paragraph",
+                    "link_preset": "h5",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -183,7 +183,7 @@
                 "menu_zf63TX",
                 "menu_H4cHLN",
                 "menu_HFzgCj",
-                "menu_qHyxag"
+                "menu_Fj89t6"
               ]
             },
             "group_gz8NPq": {
@@ -332,43 +332,10 @@
             "case": "none"
           },
           "blocks": {}
-        },
-        "footer_policy_list_YXDWfF": {
-          "type": "footer-policy-list",
-          "name": "t:names.policy_list",
-          "disabled": true,
-          "settings": {
-            "font_size": "0.75rem",
-            "case": "none"
-          },
-          "blocks": {}
-        },
-        "social_links_BGVf9A": {
-          "type": "social-links",
-          "name": "t:names.social_media_links",
-          "disabled": true,
-          "settings": {
-            "facebook_url": "https://www.facebook.com/",
-            "instagram_url": "https://www.instagram.com/",
-            "youtube_url": "https://www.youtube.com/",
-            "tiktok_url": "https://www.tiktok.com/",
-            "twitter_url": "https://www.x.com/",
-            "threads_url": "",
-            "linkedin_url": "",
-            "bluesky_url": "",
-            "snapchat_url": "",
-            "pinterest_url": "",
-            "tumblr_url": "",
-            "vimeo_url": "",
-            "custom_url": ""
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "copyright",
-        "footer_policy_list_YXDWfF",
-        "social_links_BGVf9A"
+        "copyright"
       ],
       "settings": {
         "section_width": "page-width",
