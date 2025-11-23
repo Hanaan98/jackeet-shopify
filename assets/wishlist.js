@@ -1,6 +1,7 @@
 /**
  * Wishlist functionality using localStorage
  * Works without user login - browser and user specific
+ * Version: 2.0 - Now stores product handle for API fetching
  */
 
 const WISHLIST_KEY = 'shopify_wishlist';
