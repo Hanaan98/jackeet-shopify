@@ -232,17 +232,22 @@
   .header-actions__action::after {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: 0px;
     left: 50%;
     width: 0;
-    height: 1px;
+    height: 2px;
     background-color: #000;
     transition: width 0.3s ease, left 0.3s ease;
-    z-index: 10;
+    z-index: 9999;
     pointer-events: none;
   }
 
-  .header-actions__action:hover::after,
+  .header-actions__action:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  /* Ensure hover underline shows on search button */
   .search-action:hover .header-actions__action::after {
     width: 100%;
     left: 0;
@@ -319,12 +324,32 @@
 
   .action__cart {
     padding: 6px 8px;
+    position: relative;
   }
 
   @media screen and (min-width: 990px) {
     .action__cart {
       padding: 8px 12px;
     }
+  }
+
+  /* Cart underline on hover */
+  .action__cart::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease, left 0.3s ease;
+    z-index: 9999;
+    pointer-events: none;
+  }
+
+  .action__cart:hover::after {
+    width: 100%;
+    left: 0;
   }
 
   .action__wishlist {

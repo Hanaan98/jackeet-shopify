@@ -623,12 +623,13 @@
   .menu-list__link::after {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: 0px;
     left: 50%;
     width: 0;
-    height: 1px;
-    background-color: #000;
+    height: 2px;
+    background-color: #ff0000 !important;
     transition: width 0.3s ease, left 0.3s ease;
+    z-index: 9999;
   }
 
   .menu-list__link:hover::after {
@@ -1114,3 +1115,32 @@
   "presets": []
 }
 {% endschema %}
+
+<script>
+  console.log('=== HEADER DEBUG ===');
+  
+  // Check menu links
+  const menuLinks = document.querySelectorAll('.menu-list__link');
+  console.log('Menu links found:', menuLinks.length);
+  menuLinks.forEach((link, i) => {
+    console.log(`Menu link ${i}:`, link.textContent.trim());
+    const after = window.getComputedStyle(link, '::after');
+    console.log(`  - ::after content:`, after.content);
+    console.log(`  - ::after bottom:`, after.bottom);
+    console.log(`  - ::after background:`, after.backgroundColor);
+  });
+  
+  // Check header actions
+  const actions = document.querySelectorAll('.header-actions__action');
+  console.log('Header actions found:', actions.length);
+  actions.forEach((action, i) => {
+    const label = action.querySelector('.header-actions__label');
+    console.log(`Action ${i}:`, label ? label.textContent.trim() : 'no label');
+    const after = window.getComputedStyle(action, '::after');
+    console.log(`  - ::after content:`, after.content);
+    console.log(`  - ::after bottom:`, after.bottom);
+    console.log(`  - ::after background:`, after.backgroundColor);
+  });
+  
+  console.log('=== END DEBUG ===');
+</script>
