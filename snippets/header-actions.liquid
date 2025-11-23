@@ -225,6 +225,31 @@
     align-items: center;
     justify-content: center;
     white-space: nowrap;
+    position: relative;
+  }
+
+  /* Modern hover underline for header actions */
+  .header-actions__action::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: #000;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+
+  .header-actions__action:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  /* No hover effect on touch devices */
+  @media (hover: none) {
+    .header-actions__action::after {
+      display: none;
+    }
   }
 
   .header-actions__action .svg-wrapper {
