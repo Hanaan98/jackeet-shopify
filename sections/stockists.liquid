@@ -41,7 +41,9 @@
       <div class="stockists-cta">
         <h3>SHOP NOW</h3>
         <p>Discover the full JACKEETA collection online.</p>
-        <a href="/collections/all" class="button button--primary">BROWSE COLLECTION</a>
+        <div class="button-wrapper">
+          <a href="/collections/all" class="button button--primary">BROWSE COLLECTION</a>
+        </div>
       </div>
     </div>
   </div>
@@ -150,6 +152,11 @@
     line-height: 1.6;
     color: rgba(0, 0, 0, 0.7);
     margin-bottom: 32px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
   }
 
   @media screen and (max-width: 749px) {

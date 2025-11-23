@@ -136,7 +136,9 @@
       <div class="faq-contact">
         <h3>CAN'T FIND YOUR ANSWER?</h3>
         <p>Our customer service team is here to help.</p>
-        <a href="/pages/contact" class="button button--primary">CONTACT US</a>
+        <div class="button-wrapper">
+          <a href="/pages/contact" class="button button--primary">CONTACT US</a>
+        </div>
       </div>
     </div>
   </div>
@@ -257,6 +259,11 @@
     line-height: 1.6;
     color: rgba(0, 0, 0, 0.7);
     margin-bottom: 24px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
   }
 
   @media screen and (max-width: 749px) {

@@ -100,7 +100,9 @@
       <div class="sustainability-contact">
         <h3>QUESTIONS ABOUT OUR PRACTICES?</h3>
         <p>We welcome your inquiries about our sustainability efforts.</p>
-        <a href="/pages/contact">Contact Us</a>
+        <div class="button-wrapper">
+          <a href="/pages/contact" class="button button--secondary">CONTACT US</a>
+        </div>
       </div>
     </div>
   </div>
@@ -237,16 +239,9 @@
     margin-bottom: 16px;
   }
 
-  .sustainability-contact a {
-    color: #000;
-    text-decoration: none;
-    border-bottom: 1px solid #000;
-    font-size: 16px;
-    transition: opacity 0.2s ease;
-  }
-
-  .sustainability-contact a:hover {
-    opacity: 0.6;
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
   }
 
   @media screen and (max-width: 749px) {

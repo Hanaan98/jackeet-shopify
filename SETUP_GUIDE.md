@@ -28,7 +28,7 @@
 - `templates/page.favourites.json` - Favourites page template
 - `blocks/buy-buttons.liquid` - PDP button layout
 
-### 3. **Brand Pages Created (11 Pages)**
+### 3. **Brand Pages Created (15 Pages)**
 
 #### **About & Brand Pages:**
 - ✅ **About Us** (`/pages/about`) - 4 luxury sections (Hero, Story, Values, Craftsmanship)
@@ -36,6 +36,8 @@
 - ✅ **Sustainability** (`/pages/sustainability`) - 6 pillars of sustainable practices
 - ✅ **Stockists** (`/pages/stockists`) - Where to buy (online only for now)
 - ✅ **Press & Media** (`/pages/press`) - Press kit, contact, recent coverage
+- ✅ **Careers** (`/pages/careers`) - Job openings, benefits, company culture
+- ✅ **Journal** (`/pages/journal`) - Coming soon page for blog/lifestyle content
 
 #### **Customer Service Pages:**
 - ✅ **Contact** (`/pages/contact`) - Contact form with customer service info
@@ -66,9 +68,11 @@ Go to **Online Store > Pages** and create a new page for each template:
 8. **Shipping & Returns** - Template: `page.shipping-returns`
 9. **Size Guide** - Template: `page.size-guide`
 10. **Care Instructions** - Template: `page.care-instructions`
-11. **Privacy Policy** - Template: `page.privacy-policy`
-12. **Terms of Service** - Template: `page.terms-of-service`
-13. **Favourites** - Template: `page.favourites`
+10. **Privacy Policy** - Template: `page.privacy-policy`
+11. **Terms of Service** - Template: `page.terms-of-service`
+12. **Favourites** - Template: `page.favourites`
+13. **Careers** - Template: `page.careers`
+14. **Journal** - Template: `page.journal`
 
 ### **Step 2: Create Footer Navigation Menus**
 
@@ -88,6 +92,8 @@ Go to **Online Store > Navigation** and create these menus:
 - Sustainability → /pages/sustainability
 - Press → /pages/press
 - Stockists → /pages/stockists
+- Careers → /pages/careers
+- Journal → /pages/journal
 ```
 
 #### **Footer Menu 3: "CUSTOMER CARE"**
@@ -212,6 +218,26 @@ If you encounter any issues:
 - Implement product quick view
 - Add Instagram feed integration
 - Create blog/journal section
+
+---
+
+## 📊 Final Page Count:
+
+**Total: 15 Pages Created**
+
+**Brand Pages (7):**
+- About Us, Our Story, Sustainability, Stockists, Press & Media, Careers, Journal
+
+**Customer Service (5):**
+- Contact, FAQ, Shipping & Returns, Size Guide, Care Instructions
+
+**Legal (2):**
+- Privacy Policy, Terms of Service
+
+**Feature (1):**
+- Favourites (wishlist page)
+
+All pages have **professional content**, **luxury design**, and **real purpose** - your footer will look established and complete! 🎉
 
 ---
 

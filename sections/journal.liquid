@@ -1,0 +1,210 @@
+{% liquid
+  assign heading = section.settings.heading
+%}
+
+<div class="section spacing-style color-{{ section.settings.color_scheme }}">
+  <div class="section-inner page-width">
+    <div class="journal-content">
+      {% if heading != blank %}
+        <h1 class="heading-1">{{ heading }}</h1>
+      {% endif %}
+
+      <p class="journal-intro">Coming soon: Insights, stories, and inspiration from the world of JACKEETA.</p>
+
+      <div class="journal-preview">
+        <h2>WHAT TO EXPECT</h2>
+        <div class="preview-grid">
+          <div class="preview-item">
+            <h3>STYLE GUIDES</h3>
+            <p>Seasonal styling tips and wardrobe essentials for modern living.</p>
+          </div>
+          <div class="preview-item">
+            <h3>BEHIND THE SCENES</h3>
+            <p>Exclusive looks at our design process and craftsmanship.</p>
+          </div>
+          <div class="preview-item">
+            <h3>SUSTAINABILITY</h3>
+            <p>Stories about our commitment to ethical fashion and responsible practices.</p>
+          </div>
+          <div class="preview-item">
+            <h3>INTERVIEWS</h3>
+            <p>Conversations with designers, artisans, and creative minds we admire.</p>
+          </div>
+          <div class="preview-item">
+            <h3>CARE & MAINTENANCE</h3>
+            <p>Expert advice on keeping your garments beautiful for years.</p>
+          </div>
+          <div class="preview-item">
+            <h3>CULTURE</h3>
+            <p>Art, design, and lifestyle inspiration that shapes our aesthetic.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="journal-signup">
+        <h3>BE THE FIRST TO KNOW</h3>
+        <p>Sign up for our newsletter to be notified when we launch our journal.</p>
+        <div class="button-wrapper">
+          <a href="#newsletter-signup" class="button button--primary">SUBSCRIBE</a>
+        </div>
+      </div>
+
+      <div class="journal-explore">
+        <h3>IN THE MEANTIME</h3>
+        <p>Explore our collections and discover the JACKEETA story.</p>
+        <div class="button-wrapper">
+          <a href="/collections/all" class="button button--secondary">SHOP COLLECTION</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .journal-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .heading-1 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .journal-intro {
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 64px;
+  }
+
+  .journal-preview {
+    margin-bottom: 64px;
+  }
+
+  .journal-preview h2 {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+  }
+
+  .preview-item {
+    padding: 24px;
+    background: #f8f8f8;
+  }
+
+  .preview-item h3 {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .preview-item p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  .journal-signup {
+    text-align: center;
+    padding: 64px 32px;
+    background: #f8f8f8;
+    margin-bottom: 48px;
+  }
+
+  .journal-signup h3 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .journal-signup p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 24px;
+  }
+
+  .journal-explore {
+    text-align: center;
+    padding: 48px 32px;
+  }
+
+  .journal-explore h3 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .journal-explore p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 24px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 749px) {
+    .preview-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .journal-signup {
+      padding: 48px 24px;
+    }
+
+    .journal-explore {
+      padding: 32px 16px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Journal",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Journal"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Journal"
+    }
+  ]
+}
+{% endschema %}

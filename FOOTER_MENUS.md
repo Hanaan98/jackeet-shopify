@@ -37,6 +37,8 @@ This document provides the exact structure for your Shopify footer menus. Copy t
 | Our Story | `/pages/our-story` |
 | About Us | `/pages/about` |
 | Sustainability | `/pages/sustainability` |
+| Careers | `/pages/careers` |
+| Journal | `/pages/journal` |
 | Press & Media | `/pages/press` |
 | Stockists | `/pages/stockists` |
 
@@ -244,6 +246,8 @@ Sale → /collections/sale
 Our Story → /pages/our-story
 About Us → /pages/about
 Sustainability → /pages/sustainability
+Careers → /pages/careers
+Journal → /pages/journal
 Press & Media → /pages/press
 Stockists → /pages/stockists
 ```

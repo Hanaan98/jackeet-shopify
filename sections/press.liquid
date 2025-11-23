@@ -28,7 +28,9 @@
             <li>Company fact sheet</li>
             <li>Founder biography</li>
           </ul>
-          <a href="#" class="button button--secondary">DOWNLOAD PRESS KIT</a>
+          <div class="button-wrapper">
+            <a href="#" class="button button--secondary">DOWNLOAD PRESS KIT</a>
+          </div>
         </div>
 
         <div class="press-section">
@@ -86,7 +88,9 @@
       <div class="press-cta">
         <h3>LET'S COLLABORATE</h3>
         <p>We're always interested in meaningful partnerships and editorial opportunities.</p>
-        <a href="mailto:press@jackeeta.com" class="button button--primary">GET IN TOUCH</a>
+        <div class="button-wrapper">
+          <a href="mailto:press@jackeeta.com" class="button button--primary">GET IN TOUCH</a>
+        </div>
       </div>
     </div>
   </div>
@@ -227,6 +231,11 @@
     line-height: 1.6;
     color: rgba(0, 0, 0, 0.7);
     margin-bottom: 24px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
   }
 
   @media screen and (max-width: 749px) {

@@ -1,0 +1,323 @@
+{% liquid
+  assign heading = section.settings.heading
+%}
+
+<div class="section spacing-style color-{{ section.settings.color_scheme }}">
+  <div class="section-inner page-width">
+    <div class="careers-content">
+      {% if heading != blank %}
+        <h1 class="heading-1">{{ heading }}</h1>
+      {% endif %}
+
+      <p class="careers-intro">Join a team that values craftsmanship, creativity, and collaboration. We're always looking for talented individuals who share our passion for exceptional design.</p>
+
+      <div class="careers-sections">
+        <div class="careers-section">
+          <h2>WHY JACKEETA?</h2>
+          <div class="benefits-grid">
+            <div class="benefit-item">
+              <h3>CREATIVE ENVIRONMENT</h3>
+              <p>Work with a talented team in a collaborative, inspiring atmosphere.</p>
+            </div>
+            <div class="benefit-item">
+              <h3>GROWTH OPPORTUNITIES</h3>
+              <p>Continuous learning and professional development programs.</p>
+            </div>
+            <div class="benefit-item">
+              <h3>WORK-LIFE BALANCE</h3>
+              <p>Flexible schedules and remote work options where applicable.</p>
+            </div>
+            <div class="benefit-item">
+              <h3>COMPETITIVE BENEFITS</h3>
+              <p>Health insurance, retirement plans, and employee discounts.</p>
+            </div>
+            <div class="benefit-item">
+              <h3>INCLUSIVE CULTURE</h3>
+              <p>Diverse team committed to equity and inclusion.</p>
+            </div>
+            <div class="benefit-item">
+              <h3>MEANINGFUL WORK</h3>
+              <p>Contribute to a sustainable, ethical fashion brand.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="careers-section">
+          <h2>CURRENT OPENINGS</h2>
+          
+          <div class="job-listing">
+            <h3>Senior Designer</h3>
+            <p class="job-location">Remote / Hybrid</p>
+            <p class="job-description">Lead the design of seasonal collections, from concept to final production. 5+ years experience in fashion design required.</p>
+            <a href="mailto:careers@jackeeta.com?subject=Application: Senior Designer" class="job-apply-link">APPLY NOW →</a>
+          </div>
+
+          <div class="job-listing">
+            <h3>E-Commerce Manager</h3>
+            <p class="job-location">Remote</p>
+            <p class="job-description">Oversee online store operations, analytics, and customer experience. 3+ years in e-commerce management.</p>
+            <a href="mailto:careers@jackeeta.com?subject=Application: E-Commerce Manager" class="job-apply-link">APPLY NOW →</a>
+          </div>
+
+          <div class="job-listing">
+            <h3>Customer Service Representative</h3>
+            <p class="job-location">Remote</p>
+            <p class="job-description">Provide exceptional support to our customers. Strong communication skills and fashion knowledge preferred.</p>
+            <a href="mailto:careers@jackeeta.com?subject=Application: Customer Service Representative" class="job-apply-link">APPLY NOW →</a>
+          </div>
+
+          <div class="job-listing">
+            <h3>Marketing Coordinator</h3>
+            <p class="job-location">Hybrid</p>
+            <p class="job-description">Execute marketing campaigns across digital channels. 2+ years experience in fashion marketing.</p>
+            <a href="mailto:careers@jackeeta.com?subject=Application: Marketing Coordinator" class="job-apply-link">APPLY NOW →</a>
+          </div>
+        </div>
+
+        <div class="careers-section">
+          <h2>HOW TO APPLY</h2>
+          <p>If you don't see a specific role but believe you'd be a great fit for JACKEETA, we'd still love to hear from you.</p>
+          <p>Send your resume and a brief introduction to <a href="mailto:careers@jackeeta.com">careers@jackeeta.com</a></p>
+          <p><strong>Please include:</strong></p>
+          <ul>
+            <li>Position you're applying for in the subject line</li>
+            <li>Your resume/CV</li>
+            <li>Cover letter explaining why you're interested</li>
+            <li>Portfolio or work samples (if applicable)</li>
+          </ul>
+        </div>
+
+        <div class="careers-section">
+          <h2>OUR VALUES</h2>
+          <p>We look for team members who embody:</p>
+          <ul>
+            <li><strong>Excellence:</strong> Commitment to quality in everything we do</li>
+            <li><strong>Integrity:</strong> Honest, transparent, and ethical</li>
+            <li><strong>Creativity:</strong> Innovative thinking and problem-solving</li>
+            <li><strong>Collaboration:</strong> Team-oriented with strong communication</li>
+            <li><strong>Sustainability:</strong> Passionate about responsible practices</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="careers-cta">
+        <h3>QUESTIONS ABOUT CAREERS?</h3>
+        <p>Reach out to our team for more information.</p>
+        <div class="button-wrapper">
+          <a href="mailto:careers@jackeeta.com" class="button button--primary">GET IN TOUCH</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .careers-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .heading-1 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .careers-intro {
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 64px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .careers-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    margin-bottom: 64px;
+  }
+
+  .careers-section {
+    padding-bottom: 48px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .careers-section:last-child {
+    border-bottom: none;
+  }
+
+  .careers-section h2 {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+
+  .careers-section p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 16px;
+  }
+
+  .careers-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .careers-section li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.8);
+    padding-left: 24px;
+    position: relative;
+    margin-bottom: 12px;
+  }
+
+  .careers-section li::before {
+    content: '•';
+    position: absolute;
+    left: 8px;
+  }
+
+  .careers-section a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    transition: opacity 0.2s ease;
+  }
+
+  .careers-section a:hover {
+    opacity: 0.6;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+  }
+
+  .benefit-item h3 {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .benefit-item p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  .job-listing {
+    padding: 24px;
+    background: #f8f8f8;
+    margin-bottom: 16px;
+  }
+
+  .job-listing:last-child {
+    margin-bottom: 0;
+  }
+
+  .job-listing h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .job-location {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 12px;
+  }
+
+  .job-description {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .job-apply-link {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  .careers-cta {
+    text-align: center;
+    padding: 64px 32px;
+    background: #f8f8f8;
+  }
+
+  .careers-cta h3 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .careers-cta p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 24px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 749px) {
+    .careers-sections {
+      gap: 48px;
+    }
+
+    .benefits-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .careers-cta {
+      padding: 48px 24px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Careers",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Careers"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Careers"
+    }
+  ]
+}
+{% endschema %}

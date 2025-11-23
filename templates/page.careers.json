@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "careers": {
+      "type": "careers",
+      "settings": {
+        "heading": "Careers"
+      }
+    }
+  },
+  "order": ["careers"]
+}
