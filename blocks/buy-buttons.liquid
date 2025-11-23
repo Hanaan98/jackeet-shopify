@@ -129,12 +129,17 @@
             </span>
           {%- endunless -%}
 
-          {% content_for 'block',
-            type: 'add-to-cart',
-            id: 'add-to-cart',
-            can_add_to_cart: can_add_to_cart,
-            add_to_cart_text: add_to_cart_text
-          %}
+          <div class="buy-buttons-with-wishlist">
+            {% content_for 'block',
+              type: 'add-to-cart',
+              id: 'add-to-cart',
+              can_add_to_cart: can_add_to_cart,
+              add_to_cart_text: add_to_cart_text
+            %}
+            <div class="pdp-wishlist-wrapper">
+              {% render 'wishlist-button', product: product %}
+            </div>
+          </div>
 
           {% content_for 'block',
             type: 'accelerated-checkout',
@@ -273,6 +278,79 @@
 {% stylesheet %}
   .buy-buttons-block {
     width: 100%;
+  }
+
+  /* Wishlist + Add to Cart Layout */
+  .buy-buttons-with-wishlist {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .buy-buttons-with-wishlist > .add-to-cart-block {
+    flex: 0 1 calc(80% - 6px);
+    min-width: 0;
+  }
+
+  .pdp-wishlist-wrapper {
+    flex: 0 1 calc(20% - 6px);
+    display: flex;
+    align-items: stretch;
+  }
+
+  .pdp-wishlist-wrapper wishlist-button {
+    position: static;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .pdp-wishlist-wrapper wishlist-button:hover {
+    border-color: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.02);
+    transform: none;
+  }
+
+  .pdp-wishlist-wrapper wishlist-button svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .pdp-wishlist-wrapper wishlist-button.is-wishlisted {
+    background: rgba(220, 38, 38, 0.05);
+    border-color: rgba(220, 38, 38, 0.2);
+  }
+
+  .pdp-wishlist-wrapper wishlist-button.is-wishlisted:hover {
+    background: rgba(220, 38, 38, 0.1);
+    border-color: rgba(220, 38, 38, 0.3);
+  }
+
+  @media screen and (max-width: 749px) {
+    .buy-buttons-with-wishlist {
+      gap: 8px;
+    }
+
+    .buy-buttons-with-wishlist > .add-to-cart-block {
+      flex: 0 1 calc(75% - 4px);
+    }
+
+    .pdp-wishlist-wrapper {
+      flex: 0 1 calc(25% - 4px);
+    }
+
+    .pdp-wishlist-wrapper wishlist-button svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   .product-form-buttons {

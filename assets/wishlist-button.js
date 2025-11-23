@@ -1,5 +1,5 @@
-import { Component } from '@theme/component';
-import { toggleWishlist, isInWishlist } from '@theme/wishlist';
+import { Component } from './component.js';
+import { toggleWishlist, isInWishlist } from './wishlist.js';
 
 /**
  * Wishlist button component for product cards
@@ -7,6 +7,9 @@ import { toggleWishlist, isInWishlist } from '@theme/wishlist';
 export class WishlistButton extends Component {
   connectedCallback() {
     super.connectedCallback();
+    
+    const productId = this.dataset.productId;
+    console.log('[WishlistButton] Component connected for product:', productId);
     
     this.addEventListener('click', this.handleClick, true);
     this.addEventListener('mousedown', this.handleMouseDown, true);
@@ -19,6 +22,7 @@ export class WishlistButton extends Component {
 
   disconnectedCallback() {
     super.disconnectedCallback();
+    console.log('[WishlistButton] Component disconnected for product:', this.dataset.productId);
     this.removeEventListener('click', this.handleClick, true);
     this.removeEventListener('mousedown', this.handleMouseDown, true);
     this.removeEventListener('touchstart', this.handleTouchStart, true);
@@ -29,6 +33,7 @@ export class WishlistButton extends Component {
    * @param {Event} event
    */
   handleMouseDown = (event) => {
+    console.log('[WishlistButton] Mousedown event on product:', this.dataset.productId);
     event.preventDefault();
     event.stopPropagation();
     event.stopImmediatePropagation();
@@ -39,6 +44,7 @@ export class WishlistButton extends Component {
    * @param {Event} event
    */
   handleTouchStart = (event) => {
+    console.log('[WishlistButton] Touchstart event on product:', this.dataset.productId);
     event.stopPropagation();
     event.stopImmediatePropagation();
   };
@@ -48,14 +54,27 @@ export class WishlistButton extends Component {
    * @param {Event} event
    */
   handleClick = (event) => {
+    console.log('[WishlistButton] Click event on product:', this.dataset.productId);
+    console.log('[WishlistButton] Event details:', {
+      target: event.target,
+      currentTarget: event.currentTarget,
+      type: event.type,
+      defaultPrevented: event.defaultPrevented
+    });
+    
     event.preventDefault();
     event.stopPropagation();
     event.stopImmediatePropagation();
     
     const productId = parseInt(this.dataset.productId || '0');
-    if (!productId) return;
+    if (!productId) {
+      console.warn('[WishlistButton] No product ID found!');
+      return;
+    }
     
+    console.log('[WishlistButton] Toggling wishlist for product:', productId);
     const isAdded = toggleWishlist(productId);
+    console.log('[WishlistButton] Toggle result:', isAdded ? 'Added' : 'Removed');
     
     // Add animation class
     this.classList.add('wishlist-button--animating');
@@ -77,6 +96,7 @@ export class WishlistButton extends Component {
     if (!productId) return;
     
     const isWishlisted = isInWishlist(productId);
+    console.log('[WishlistButton] Updating state for product:', productId, 'isWishlisted:', isWishlisted);
     this.classList.toggle('is-wishlisted', isWishlisted);
     this.setAttribute('aria-label', isWishlisted ? 'Remove from wishlist' : 'Add to wishlist');
   }

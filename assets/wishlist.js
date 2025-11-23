@@ -12,9 +12,11 @@ const WISHLIST_KEY = 'shopify_wishlist';
 export function getWishlist() {
   try {
     const wishlist = localStorage.getItem(WISHLIST_KEY);
-    return wishlist ? JSON.parse(wishlist) : [];
+    const parsed = wishlist ? JSON.parse(wishlist) : [];
+    console.log('[Wishlist] Get wishlist:', parsed);
+    return parsed;
   } catch (error) {
-    console.error('Error reading wishlist:', error);
+    console.error('[Wishlist] Error reading wishlist:', error);
     return [];
   }
 }
@@ -25,11 +27,14 @@ export function getWishlist() {
  */
 function saveWishlist(wishlist) {
   try {
+    console.log('[Wishlist] Saving wishlist:', wishlist);
     localStorage.setItem(WISHLIST_KEY, JSON.stringify(wishlist));
+    console.log('[Wishlist] Wishlist saved successfully');
     // Dispatch custom event so other parts of the app can react
     window.dispatchEvent(new CustomEvent('wishlist:updated', { detail: { wishlist } }));
+    console.log('[Wishlist] Event dispatched: wishlist:updated');
   } catch (error) {
-    console.error('Error saving wishlist:', error);
+    console.error('[Wishlist] Error saving wishlist:', error);
   }
 }
 
@@ -39,12 +44,15 @@ function saveWishlist(wishlist) {
  * @returns {boolean} Success status
  */
 export function addToWishlist(productId) {
+  console.log('[Wishlist] Adding product to wishlist:', productId);
   const wishlist = getWishlist();
   if (!wishlist.includes(productId)) {
     wishlist.push(productId);
     saveWishlist(wishlist);
+    console.log('[Wishlist] Product added successfully:', productId);
     return true;
   }
+  console.log('[Wishlist] Product already in wishlist:', productId);
   return false;
 }
 
@@ -54,13 +62,16 @@ export function addToWishlist(productId) {
  * @returns {boolean} Success status
  */
 export function removeFromWishlist(productId) {
+  console.log('[Wishlist] Removing product from wishlist:', productId);
   const wishlist = getWishlist();
   const index = wishlist.indexOf(productId);
   if (index > -1) {
     wishlist.splice(index, 1);
     saveWishlist(wishlist);
+    console.log('[Wishlist] Product removed successfully:', productId);
     return true;
   }
+  console.log('[Wishlist] Product not found in wishlist:', productId);
   return false;
 }
 
@@ -70,11 +81,14 @@ export function removeFromWishlist(productId) {
  * @returns {boolean} True if added, false if removed
  */
 export function toggleWishlist(productId) {
+  console.log('[Wishlist] Toggling wishlist for product:', productId);
   const wishlist = getWishlist();
   if (wishlist.includes(productId)) {
+    console.log('[Wishlist] Product is in wishlist, removing...');
     removeFromWishlist(productId);
     return false;
   } else {
+    console.log('[Wishlist] Product not in wishlist, adding...');
     addToWishlist(productId);
     return true;
   }
@@ -140,6 +154,7 @@ function initWishlistHearts() {
 export function updateAllHearts() {
   const hearts = document.querySelectorAll('[data-wishlist-toggle]');
   const wishlist = getWishlist();
+  console.log(`[Wishlist] Updating ${hearts.length} heart icons`);
   
   hearts.forEach((heart) => {
     const element = /** @type {HTMLElement} */ (heart);
@@ -148,6 +163,7 @@ export function updateAllHearts() {
     
     element.classList.toggle('is-wishlisted', isWishlisted);
     element.setAttribute('aria-label', isWishlisted ? 'Remove from wishlist' : 'Add to wishlist');
+    console.log(`[Wishlist] Updated heart for product ${productId}: ${isWishlisted ? 'wishlisted' : 'not wishlisted'}`);
   });
 }
 

@@ -24,9 +24,6 @@
         {{- product.title }}
       </a>
     </div>
-    <div class="pdp-wishlist-container">
-      {% render 'wishlist-button', product: product %}
-    </div>
     {% content_for 'blocks' %}
   {% endcapture %}
 
@@ -43,64 +40,6 @@
 
   .view-product-title {
     display: none;
-  }
-
-  /* PDP Wishlist Button Styling */
-  .pdp-wishlist-container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-block-end: 16px;
-    padding-inline: 16px;
-  }
-
-  .pdp-wishlist-container wishlist-button {
-    position: static;
-    width: 44px;
-    height: 44px;
-  }
-
-  .pdp-wishlist-container wishlist-button button {
-    width: 44px;
-    height: 44px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    background: white;
-    transition: all 0.2s ease;
-  }
-
-  .pdp-wishlist-container wishlist-button button:hover {
-    border-color: rgba(0, 0, 0, 0.3);
-    background: rgba(0, 0, 0, 0.02);
-  }
-
-  .pdp-wishlist-container wishlist-button svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  @media screen and (max-width: 749px) {
-    .pdp-wishlist-container {
-      padding-inline: 12px;
-      margin-block-end: 12px;
-    }
-
-    .pdp-wishlist-container wishlist-button {
-      width: 40px;
-      height: 40px;
-    }
-
-    .pdp-wishlist-container wishlist-button button {
-      width: 40px;
-      height: 40px;
-    }
-
-    .pdp-wishlist-container wishlist-button svg {
-      width: 22px;
-      height: 22px;
-    }
   }
 
   /* Container styles */
