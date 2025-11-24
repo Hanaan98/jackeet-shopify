@@ -117,12 +117,22 @@
         const li = document.createElement('li');
         li.className = 'product-grid__item';
         
-        // Use Shopify's product card HTML structure
+        // Use Shopify's product card HTML structure with remove button
         li.innerHTML = `
-          <product-card class="product-card" data-product-id="${product.id}">
+          <product-card class="product-card favourites-product-card" data-product-id="${product.id}">
             <a href="/products/${product.handle}" class="product-card__link">
               <span class="visually-hidden">${product.title}</span>
             </a>
+            <button 
+              class="favourites-remove-button" 
+              data-product-id="${product.id}"
+              aria-label="Remove from wishlist"
+              type="button"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
             <div class="product-card__content layout-panel-flex layout-panel-flex--column product-grid__card">
               <div class="card-gallery">
                 <div class="card-gallery__image-wrapper">
@@ -147,6 +157,24 @@
             </div>
           </product-card>
         `;
+        
+        // Add remove handler
+        const removeBtn = li.querySelector('.favourites-remove-button');
+        removeBtn.addEventListener('click', async (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const { removeFromWishlist } = await import('{{ 'wishlist.js' | asset_url }}');
+          removeFromWishlist(product.id);
+          li.style.animation = 'fadeOut 0.3s ease';
+          setTimeout(() => {
+            li.remove();
+            const remainingCards = grid.querySelectorAll('.product-grid__item');
+            if (remainingCards.length === 0) {
+              grid.style.display = 'none';
+              emptyState.style.display = 'block';
+            }
+          }, 300);
+        });
         
         grid.appendChild(li);
       });
@@ -323,7 +351,76 @@
     height: 100%;
     object-fit: cover;
   }
-      padding-inline: var(--padding-lg);
+
+  /* Remove button for favourites page */
+  .favourites-remove-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  @media screen and (min-width: 750px) {
+    .favourites-remove-button {
+      top: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  /* Show on hover */
+  .favourites-product-card:hover .favourites-remove-button {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Always show on mobile/touch devices */
+  @media (hover: none) {
+    .favourites-remove-button {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .favourites-remove-button:hover {
+    background: rgba(220, 38, 38, 0.1);
+    border-color: rgba(220, 38, 38, 0.2);
+    transform: scale(1.1);
+  }
+
+  .favourites-remove-button svg {
+    width: 14px;
+    height: 14px;
+    color: var(--color-foreground);
+  }
+
+  @media screen and (min-width: 750px) {
+    .favourites-remove-button svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      transform: scale(0.9);
     }
   }
 
