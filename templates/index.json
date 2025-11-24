@@ -356,6 +356,7 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
+        "image_1": "shopify://shop_images/espressoyatay_5d4b063b-06a3-4272-91a3-6a6d31f70a72.webp",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
