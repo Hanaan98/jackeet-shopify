@@ -228,36 +228,9 @@
     position: relative;
   }
 
-  /* Modern hover underline for header actions */
-  .header-actions__action::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    width: 0;
-    height: 1px;
-    background-color: #000;
-    transition: width 0.3s ease, left 0.3s ease;
-    z-index: 9999;
-    pointer-events: none;
-  }
-
-  .header-actions__action:hover::after {
-    width: 100%;
-    left: 0;
-  }
-
-  /* Ensure hover underline shows on search button */
-  .search-action:hover .header-actions__action::after {
-    width: 100%;
-    left: 0;
-  }
-
-  /* No hover effect on touch devices */
-  @media (hover: none) {
-    .header-actions__action::after {
-      display: none;
-    }
+  /* Header actions styling */
+  .header-actions__action {
+    /* removed underline effect */
   }
 
   .header-actions__action .svg-wrapper {
@@ -293,6 +266,7 @@
   /* Hide search, login, wishlist on mobile - only show bag */
   @media screen and (max-width: 989px) {
     .action__wishlist,
+    .search-action,
     .action__search,
     .account-button,
     .account-popover,
@@ -333,24 +307,7 @@
     }
   }
 
-  /* Cart underline on hover */
-  .action__cart::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    width: 0;
-    height: 1px;
-    background-color: #000;
-    transition: width 0.3s ease, left 0.3s ease;
-    z-index: 9999;
-    pointer-events: none;
-  }
 
-  .action__cart:hover::after {
-    width: 100%;
-    left: 0;
-  }
 
   .action__wishlist {
     padding: 6px 8px;
