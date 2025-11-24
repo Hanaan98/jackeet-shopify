@@ -329,7 +329,10 @@
       ],
       "name": "t:names.collections_grid",
       "settings": {
-        "collection_list": [],
+        "collection_list": [
+          "varsity-jacket-for-women",
+          "varsity-jacket-for-men"
+        ],
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "columns": 2,
