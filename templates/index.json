@@ -193,7 +193,10 @@
       "custom_css": [],
       "name": "t:names.collections_grid",
       "settings": {
-        "collection_list": [],
+        "collection_list": [
+          "men",
+          "women"
+        ],
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "columns": 2,
