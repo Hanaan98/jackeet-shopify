@@ -199,9 +199,9 @@
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
-          "jackets",
-          "coats",
-          "casual"
+          "varsity-jacket-for-men",
+          "mens-jackets",
+          "shearling-jacket-for-men"
         ],
         "layout_type": "grid",
         "carousel_on_mobile": false,
