@@ -196,6 +196,7 @@
       "block_order": [
         "group_qp88Gw"
       ],
+      "disabled": true,
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
