@@ -199,13 +199,12 @@
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
-          "jackets",
-          "coats",
-          "casual"
+          "mens-coats",
+          "wool-coat-for-men"
         ],
         "layout_type": "grid",
         "carousel_on_mobile": false,
-        "columns": 3,
+        "columns": 2,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
         "columns_gap": 8,
