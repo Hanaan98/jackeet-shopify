@@ -37,10 +37,26 @@
             "padding-inline-end": 0
           },
           "blocks": {}
+        },
+        "button_y9GRhP": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Shop Women",
+            "link": "shopify://collections/women",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "text_tzGazA"
+        "text_tzGazA",
+        "button_y9GRhP"
       ],
       "settings": {
         "media_type_1": "image",
@@ -102,10 +118,26 @@
             "padding-inline-end": 0
           },
           "blocks": {}
+        },
+        "button_LzRXBF": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Shop MEN",
+            "link": "shopify://collections/men",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "text_mrbhqU"
+        "text_mrbhqU",
+        "button_LzRXBF"
       ],
       "settings": {
         "media_type_1": "image",
