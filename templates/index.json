@@ -16,7 +16,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<h1>The Elements <br/>of Style</h1>",
+            "text": "<h1>Timeless Elegance, Effortlessly Cool</h1>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -81,7 +81,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<h1>The Elements <br/>of Style</h1>",
+            "text": "<h1>Sporty Vibes, Sophisticated Style</h1>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -517,7 +517,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<h1>The Elements <br/>of Style</h1>",
+            "text": "<h1>Wrap Yourself in Style</h1>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -583,7 +583,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<h1>The Elements <br/>of Style</h1>",
+            "text": "<h1>The Ultimate Outerwear</h1>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
