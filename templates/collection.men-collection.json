@@ -199,9 +199,9 @@
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
-          "jackets",
-          "coats",
-          "casual"
+          "men-jackets",
+          "mens-coats-1",
+          "fleece-hoodies-for-men"
         ],
         "layout_type": "grid",
         "carousel_on_mobile": false,
