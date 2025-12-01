@@ -35,6 +35,7 @@
     "type_line_height_h6": "display-loose",
     "type_letter_spacing_h6": "heading-normal",
     "type_case_h6": "uppercase",
+    "badge_position": "bottom-left",
     "badge_corner_radius": 0,
     "badge_font_family": "subheading",
     "badge_text_transform": "uppercase",
