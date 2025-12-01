@@ -348,7 +348,7 @@
           "settings": {
             "content_direction": "row",
             "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
+            "horizontal_alignment": "flex-end",
             "vertical_alignment": "flex-end",
             "align_baseline": true,
             "horizontal_alignment_flex_direction_column": "flex-start",
@@ -371,14 +371,13 @@
             "border_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "padding-inline-start": 15,
+            "padding-inline-end": 15
           },
           "blocks": {
             "product_list_button_LhnXGa": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
-              "disabled": true,
               "settings": {
                 "label": "View all",
                 "open_in_new_tab": false,
