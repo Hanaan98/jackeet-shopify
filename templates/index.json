@@ -130,6 +130,7 @@
             "product_list_button_bdKdHf": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
+              "disabled": true,
               "settings": {
                 "label": "View all",
                 "open_in_new_tab": false,
@@ -160,8 +161,8 @@
             "border_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "padding-inline-start": 15,
+            "padding-inline-end": 15
           },
           "blocks": {
             "product_card_gallery_ApaRWX": {
