@@ -43,7 +43,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "Shop Christmas sale",
-            "link": "shopify://collections/women",
+            "link": "shopify://collections/sale",
             "open_in_new_tab": false,
             "style_class": "button",
             "width": "fit-content",
