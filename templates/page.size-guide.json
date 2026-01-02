@@ -12,9 +12,12 @@
     "size_guide": {
       "type": "size-guide",
       "settings": {
-        "heading": "Size Guide"
+        "heading": "",
+        "color_scheme": ""
       }
     }
   },
-  "order": ["size_guide"]
+  "order": [
+    "size_guide"
+  ]
 }
