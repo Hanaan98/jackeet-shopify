@@ -437,6 +437,9 @@
           ]
         }
       },
+      "custom_css": [
+        ".popup-link__button svg{display:none;}"
+      ],
       "settings": {
         "content_width": "content-full-width",
         "desktop_media_position": "left",
