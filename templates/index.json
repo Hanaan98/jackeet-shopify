@@ -58,7 +58,6 @@
         "text_wjVEkN",
         "button_9iEUxQ"
       ],
-      "disabled": true,
       "settings": {
         "media_type_1": "image",
         "image_1": "shopify://shop_images/download_df3a65f5-14f3-49d3-9b32-3c8e7bfed7e0.jpg",
@@ -148,6 +147,7 @@
         "stack_media_on_mobile": false,
         "custom_mobile_media": true,
         "media_type_1_mobile": "image",
+        "image_1_mobile": "shopify://shop_images/Untitled_design_-_2026-01-03T021130.979.png",
         "media_type_2_mobile": "image",
         "link": "",
         "open_in_new_tab": false,
