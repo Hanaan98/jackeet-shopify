@@ -156,6 +156,7 @@
               "type": "popup-link",
               "name": "t:names.popup_link",
               "settings": {
+                "pop_page": "",
                 "behavior": "default",
                 "heading": "Size Guide",
                 "type_preset": "paragraph",
@@ -437,9 +438,7 @@
           ]
         }
       },
-      "custom_css": [
-        ".popup-link__button svg {display: none;}"
-      ],
+      "custom_css": [],
       "settings": {
         "content_width": "content-full-width",
         "desktop_media_position": "left",
