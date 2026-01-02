@@ -32,12 +32,15 @@
     >
       {{ block_settings.heading }}
     </h2>
-<div class="popup-link__inner">
+<<div class="popup-link__inner">
   {% if block_settings.popup_page != blank %}
+    <!-- Debug: Selected page is: {{ block_settings.popup_page }} -->
+    <!-- Debug: Page content length: {{ pages[block_settings.popup_page].content | size }} -->
     {{ pages[block_settings.popup_page].content }}
   {% else %}
     {% content_for 'blocks' %}
   {% endif %}
+
 </div>
 
     <button
