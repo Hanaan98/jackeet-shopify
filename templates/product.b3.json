@@ -146,7 +146,7 @@
                 "show_swatches": true,
                 "alignment": "left",
                 "padding-block-start": 12,
-                "padding-block-end": 24,
+                "padding-block-end": 12,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -159,9 +159,9 @@
                 "pop_page": "",
                 "behavior": "default",
                 "heading": "Size Guide",
-                "type_preset": "paragraph",
+                "type_preset": "",
                 "padding-block-start": 0,
-                "padding-block-end": 0,
+                "padding-block-end": 12,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
