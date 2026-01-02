@@ -67,18 +67,6 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "review_hFCBpw": {
-              "type": "review",
-              "name": "t:names.product_review_stars",
-              "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "rating_color": "primary",
-                "type_preset": "paragraph",
-                "alignment": "left"
-              },
-              "blocks": {}
-            },
             "text_9WaLn7": {
               "type": "text",
               "name": "t:names.title",
@@ -102,6 +90,18 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "review_hFCBpw": {
+              "type": "review",
+              "name": "t:names.product_review_stars",
+              "settings": {
+                "stars_style": "shaded",
+                "show_number": true,
+                "rating_color": "primary",
+                "type_preset": "paragraph",
+                "alignment": "left"
               },
               "blocks": {}
             },
@@ -427,8 +427,8 @@
             }
           },
           "block_order": [
-            "review_hFCBpw",
             "text_9WaLn7",
+            "review_hFCBpw",
             "price_a7krng",
             "divider_HrJgFt",
             "variant_picker_R3rGDr",
