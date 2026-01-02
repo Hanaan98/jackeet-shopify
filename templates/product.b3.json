@@ -456,7 +456,7 @@
         "judge_me_reviews_testimonials_carousel_3bQ3dj": {
           "type": "shopify://apps/judge-me-reviews/blocks/testimonials_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-            "show_sample_reviews": true,
+            "show_sample_reviews": false,
             "reviews_selection": "all",
             "products": [],
             "star_rating": "all",
@@ -471,9 +471,9 @@
             "max_width": 1100,
             "corner_styling": "soft",
             "quote_marks_style": "serif",
-            "card_color": "#F9F9F9",
-            "stars_and_quote_marks_color": "#108474",
-            "text_color": "#000000",
+            "card_color": "#000000",
+            "stars_and_quote_marks_color": "#666666",
+            "text_color": "#f5f5f5",
             "arrows_color": "#000000",
             "show_border": false,
             "border_color": "#108474",
