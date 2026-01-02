@@ -145,7 +145,7 @@
               "settings": {
                 "behavior": "default",
                 "heading": "Size Guide",
-                "type_preset": "h4",
+                "type_preset": "paragraph",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
