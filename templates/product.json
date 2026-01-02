@@ -156,7 +156,7 @@
               "type": "popup-link",
               "name": "t:names.popup_link",
               "settings": {
-                "page": "",
+                "pop_page": "",
                 "behavior": "default",
                 "heading": "Size Guide",
                 "type_preset": "",
@@ -170,7 +170,7 @@
                   "type": "page",
                   "name": "t:names.page",
                   "settings": {
-                    "page": "size-guide",
+                    "page": "mens-wear",
                     "inherit_color_scheme": true,
                     "color_scheme": "",
                     "background": false,
