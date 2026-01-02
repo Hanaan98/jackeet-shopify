@@ -156,6 +156,7 @@
               "type": "popup-link",
               "name": "t:names.popup_link",
               "settings": {
+                "page": "size-guide",
                 "behavior": "default",
                 "heading": "Size Guide",
                 "type_preset": "",
@@ -164,27 +165,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-                "page_c8ajE8": {
-                  "type": "page",
-                  "name": "t:names.page",
-                  "settings": {
-                    "page": "size-guide",
-                    "inherit_color_scheme": true,
-                    "color_scheme": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "page_c8ajE8"
-              ]
+              "blocks": {}
             },
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",
