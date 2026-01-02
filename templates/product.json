@@ -156,7 +156,7 @@
               "type": "popup-link",
               "name": "t:names.popup_link",
               "settings": {
-                "page": "size-guide",
+                "page": "womens-wear",
                 "behavior": "default",
                 "heading": "Size Guide",
                 "type_preset": "",
