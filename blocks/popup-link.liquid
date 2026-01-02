@@ -32,9 +32,14 @@
     >
       {{ block_settings.heading }}
     </h2>
-    <div class="popup-link__inner">
-      {% content_for 'blocks' %}
-    </div>
+<div class="popup-link__inner">
+  {% if block_settings.page != blank %}
+    {{ pages[block_settings.page].content }}
+  {% else %}
+    {% content_for 'blocks' %}
+  {% endif %}
+</div>
+
     <button
       ref="closeButton"
       on:click="/closeDialog"
